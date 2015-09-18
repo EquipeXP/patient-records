@@ -7,7 +7,7 @@ Now, here are a few steps to get this project up and running:
   - Install MySQL and create a user 'app' with no password (just for study purposes, so chill)
   - Create a Schema called 'pep' and run the InitialScript.sql @ patient-records/scripts
   - Then, from your favorite terminal, go inside patient-records and run the following commands:
- ```sh
+```sh
 $ mvn clean install
 $ mvn exec:java
 ````
