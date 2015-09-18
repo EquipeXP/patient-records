@@ -1,0 +1,4 @@
+Search for patients
+In order to see a registered patient
+As a user
+I want to be able to see a list of patients

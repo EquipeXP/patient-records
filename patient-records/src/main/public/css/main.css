@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+
+body {
+	background-color: #F7F7F7;
+	font-family: "Roboto Light";
+}
+
+@font-face {
+    font-family: 'Roboto Light';
+    src: url('../fonts/Roboto-Light.ttf');
+}
+
+/* bootstrap override */
+
+.table-hover>tbody>tr:hover {
+    background-color: #eaeaea;
+}
