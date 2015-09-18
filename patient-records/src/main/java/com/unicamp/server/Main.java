@@ -2,9 +2,14 @@ package com.unicamp.server;
 
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.grizzly.http.server.StaticHttpHandler;
+import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.moxy.json.MoxyJsonConfig;
+import org.glassfish.jersey.process.internal.RequestScoped;
 import org.glassfish.jersey.server.ResourceConfig;
+
+import com.unicamp.repository.IPatientRepository;
+import com.unicamp.repository.PatientRepository;
 
 import java.io.IOException;
 import java.net.URI;
@@ -22,7 +27,8 @@ public class Main {
     	final ResourceConfig rc = new ResourceConfig()
     			.packages("com.unicamp.controllers")
     			.packages("org.glassfish.jersey.examples.jsonmoxy")
-                .register(createMoxyJsonResolver());
+                .register(createMoxyJsonResolver())
+                .register(new DependencyBinder());
     	
     	return GrizzlyHttpServerFactory.createHttpServer(URI.create(BASE_URI), rc);
     }
@@ -47,6 +53,15 @@ public class Main {
         System.in.read();
         
         server.shutdown();
+    }
+    
+    public static class DependencyBinder extends AbstractBinder {
+
+        @Override
+        protected void configure() {
+            
+        	bind(PatientRepository.class).to(IPatientRepository.class).in(RequestScoped.class);
+    	}
     }
 }
 

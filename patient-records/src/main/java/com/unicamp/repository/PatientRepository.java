@@ -7,8 +7,9 @@ import org.hibernate.Session;
 import com.unicamp.entity.Patient;
 import com.unicamp.util.HibernateUtil;
 
-public class PatientRepository {
+public class PatientRepository implements IPatientRepository {
 
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<Patient> getAllPatients() {
 		
