@@ -2,18 +2,22 @@ package com.unicamp.repository;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import org.hibernate.Session;
 
 import com.unicamp.entity.Patient;
-import com.unicamp.util.HibernateUtil;
 
 public class PatientRepository implements IPatientRepository {
 
+	@Inject
+	private javax.inject.Provider<Session> _session;
+	
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<Patient> getAllPatients() {
 		
-		Session session = HibernateUtil.getSession();
+		Session session = _session.get();
 		session.beginTransaction();
 		
 		List<Patient> patients = session.createCriteria(Patient.class).list();

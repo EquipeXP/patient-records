@@ -7,6 +7,8 @@ import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.moxy.json.MoxyJsonConfig;
 import org.glassfish.jersey.process.internal.RequestScoped;
 import org.glassfish.jersey.server.ResourceConfig;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 import com.unicamp.repository.IPatientRepository;
 import com.unicamp.repository.PatientRepository;
@@ -16,6 +18,7 @@ import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.inject.Singleton;
 import javax.ws.rs.ext.ContextResolver;
 
 public class Main {
@@ -61,6 +64,8 @@ public class Main {
         protected void configure() {
             
         	bind(PatientRepository.class).to(IPatientRepository.class).in(RequestScoped.class);
+        	bindFactory(SessionFactoryFactory.class).to(SessionFactory.class).in(Singleton.class);
+		    bindFactory(SFFactory.class).to(Session.class).in(RequestScoped.class);
     	}
     }
 }
