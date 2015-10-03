@@ -8,7 +8,7 @@ Given: Patient 'João of Silva' is registered in the system
 When: Name, Phone, Gender, Birth, Address, maritalStatus, Breed and Ethinicity are given
 
 |Name		|Phone			|Gender		|Birth					|Address				|maritalStatus	|breed		|ethinicity	|
-|Joao Silva	|19 999866969	|Masculino	|19/02/1988 14:37:46	|Rua das paredes, 999	|Viúva(o)		|Bangladeshi|Panamenho	|
+|Joao of Silva	|19 999866969	|Masculino	|19/02/1988 14:37:46	|Rua das paredes, 999	|Viúva(o)		|Bangladeshi|Panamenho	|
 
 Then: The following Alert should appear warning about a possible duplicated entry
 |Alert																	|
@@ -28,3 +28,11 @@ And: an input on auditing system is added.
 Examples:	
 name | telephone |  admGender | birthTime | address | maritalState | breed | ethnicity
 João Silva | 19 999866969 | Masculino | 19/02/1988 14:37:46 | Rua das paredes, 999 | Viúva(o) | Bangladeshi | Panamenho 
+
+
+Scenario: Auditory trail
+Given: Patient 'Joao of Silva' is not registered in the system
+When: Maria Cardoso tries to register 'Joao of Silva'
+Then: A Auditory log is created
+
+

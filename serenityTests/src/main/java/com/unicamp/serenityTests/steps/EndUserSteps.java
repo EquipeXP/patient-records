@@ -26,10 +26,11 @@ public class EndUserSteps extends ScenarioSteps {
     
     @Step
     public void is_patient_registered(){
-    	
+    	;
     }
-    	
-    public void insert_data(String name, String telephone, String admGender,
+    
+    @Step
+    public void insert_data(String name, int telephone, String admGender,
 			String birthTime, String address, String maritalState,
 			String breed, String ethnicity) {
     	;
@@ -37,6 +38,11 @@ public class EndUserSteps extends ScenarioSteps {
     
     @Step
     public void should_see_msg(String message) {
+    	;
+    }
+    
+    @Step
+    public void check_log_created(){
     	;
     }
 }

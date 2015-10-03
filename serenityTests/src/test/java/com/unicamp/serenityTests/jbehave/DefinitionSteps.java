@@ -31,7 +31,7 @@ public class DefinitionSteps {
 	
 	/**********************************************************************/
 	@When("user insert data '$name', '$telephone',  '$admGender', '$birthTime', '$address', '$maritalState', '$breed' and '$ethnicity'")
-	public void whenUserInsertData(String name, String telephone,
+	public void whenUserInsertData(String name, int telephone,
 			String admGender, String birthTime, String address,
 			String maritalState, String breed, String ethnicity) {
 		endUser.insert_data(name, telephone, admGender, birthTime, address,
@@ -45,19 +45,38 @@ public class DefinitionSteps {
     
     /**********************************************************************/
     @Given("Patient '$patient' is registered in the system")
-    public void givenThePatientIsRegistered(String patient) {
-        
+    public void givenThePatientIsRegistered() {
+    	endUser.check_patient_registered();
     }
 
     @When("'$name', '$phone', '$gender', '$birth', '$address', '$maritalStatus', '$breed' and '$ethinicity' are given")
-    public void whenDemographicDataIsInputed() {
-        
+    public void whenDemographicDataIsInputed(String name, int telephone,
+			String admGender, String birthTime, String address,
+			String maritalState, String breed, String ethnicity) {
+    	endUser.insert_data(name, telephone, admGender, birthTime, address,
+				maritalState, breed, ethnicity);
     }
 
     @Then("The following '$alert' should appear warning about a possible duplicated entry")
-    public void thenAnAlertShouldApear(String patient) {
-        
-    }    
+    public void thenAnAlertShouldApear(String alert) {
+    	endUser.should_see_msg(alert);
+    }
+    
+    /**********************************************************************/
+    @Given ("Patient '$patient' is registered in the system")
+    public void givenThePatientIsntRegistered(String patient){
+    	endUser.check_patient_not_registered();
+    }
+    
+    @When("Secretary tries to register Patient")
+    public void whenSecretaryTriesToRegister(){
+    
+    }
+    
+    @Then("A Auditory log is created")
+    public void thenAAuditoryLogIsCreated(){
+    	endUser.check_log_created();
+    }
 
 
 }
