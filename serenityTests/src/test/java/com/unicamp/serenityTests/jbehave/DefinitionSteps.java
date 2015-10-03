@@ -22,14 +22,18 @@ public class DefinitionSteps {
 	public void whenTheUserLooksAtThePage() {
 
 	}
-	
+
 	@Then("they should see the patient '$patient'")
-    public void thenTheyShouldSeeThePatient(String patient) {
-        endUser.should_see_patient(patient);
-    }
-	
-	
+	public void thenTheyShouldSeeThePatient(String patient) {
+		endUser.should_see_patient(patient);
+	}
+
 	/**********************************************************************/
+	@Given("Patient '$patient' is not registered in the system")
+	public void givenPatientIsNotRegistered(String patient) {
+
+	}
+
 	@When("user insert data '$name', '$telephone',  '$admGender', '$birthTime', '$address', '$maritalState', '$breed' and '$ethnicity'")
 	public void whenUserInsertData(String name, int telephone,
 			String admGender, String birthTime, String address,
@@ -37,16 +41,17 @@ public class DefinitionSteps {
 		endUser.insert_data(name, telephone, admGender, birthTime, address,
 				maritalState, breed, ethnicity);
 	}
-    
-    @Then("user should see '$message'")
+
+	@Then("user should see '$message'")
 	public void thenUserShouldSee(String message) {
 		endUser.should_see_msg(message);
 	}
+
     
     /**********************************************************************/
     @Given("Patient '$patient' is registered in the system")
-    public void givenThePatientIsRegistered() {
-    	endUser.check_patient_registered();
+    public void givenThePatientIsRegistered(String patient) {
+    	endUser.check_patient_registered(patient);
     }
 
     @When("'$name', '$phone', '$gender', '$birth', '$address', '$maritalStatus', '$breed' and '$ethinicity' are given")
@@ -63,9 +68,9 @@ public class DefinitionSteps {
     }
     
     /**********************************************************************/
-    @Given ("Patient '$patient' is registered in the system")
+    @Given("Patient '$patient' is not registered in the system")
     public void givenThePatientIsntRegistered(String patient){
-    	endUser.check_patient_not_registered();
+    	endUser.check_patient_not_registered(patient);
     }
     
     @When("Secretary tries to register Patient")
@@ -77,6 +82,17 @@ public class DefinitionSteps {
     public void thenAAuditoryLogIsCreated(){
     	endUser.check_log_created();
     }
-
+    
+    /**********************************************************************/
+    //Este @Given eh o mesmo do Cenario acima !
+    @When("One of the following data: $name, $phone, $gender, $birth, $address, $maritalStatus, $breed and $ethinicity is missing")
+    public void whenDataIsMissing(String name, int telephone,
+			String admGender, String birthTime, String address,
+			String maritalState, String breed, String ethnicity){
+    	
+    	endUser.check_empty_data(name, telephone,
+    			admGender, birthTime, address,
+    			maritalState, breed, ethnicity);
+    }
 
 }
