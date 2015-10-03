@@ -19,10 +19,10 @@ Then The system should return the message: o cadastro foi preenchido com sucesso
 
 Scenario: Successfully register ‘João of Silva’
 Given: Patient ‘João of Silva’ is not registered in the system
-When: name, telephone,  admGender, birthTime, address, maritalState, breed and ethnicity is inserted.
-Then: Patient is registered succesfully.
-And: An input on auditing system is added.
+When: user insert data name, telephone,  admGender, birthTime, address, maritalState, breed and ethnicity.
+Then: user should see 'Paciente adicionado com sucesso'.
+And: an input on auditing system is added.
 
-Examples:
+Examples:	
 name | telephone |  admGender | birthTime | address | maritalState | breed | ethnicity
 João Silva | 19 999866969 | Masculino | 19/02/1988 14:37:46 | Rua das paredes, 999 | Viúva(o) | Bangladeshi | Panamenho 
