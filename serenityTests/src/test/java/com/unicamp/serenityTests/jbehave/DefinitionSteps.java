@@ -22,14 +22,18 @@ public class DefinitionSteps {
 	public void whenTheUserLooksAtThePage() {
 
 	}
-	
+
 	@Then("they should see the patient '$patient'")
-    public void thenTheyShouldSeeThePatient(String patient) {
-        endUser.should_see_patient(patient);
-    }
-	
-	
+	public void thenTheyShouldSeeThePatient(String patient) {
+		endUser.should_see_patient(patient);
+	}
+
 	/**********************************************************************/
+	@Given("Patient '$patient' is not registered in the system")
+	public void givenPatientIsNotRegistered(String patient) {
+
+	}
+
 	@When("user insert data '$name', '$telephone',  '$admGender', '$birthTime', '$address', '$maritalState', '$breed' and '$ethnicity'")
 	public void whenUserInsertData(String name, String telephone,
 			String admGender, String birthTime, String address,
@@ -37,27 +41,26 @@ public class DefinitionSteps {
 		endUser.insert_data(name, telephone, admGender, birthTime, address,
 				maritalState, breed, ethnicity);
 	}
-    
-    @Then("user should see '$message'")
+
+	@Then("user should see '$message'")
 	public void thenUserShouldSee(String message) {
 		endUser.should_see_msg(message);
 	}
-    
-    /**********************************************************************/
-    @Given("Patient '$patient' is registered in the system")
-    public void givenThePatientIsRegistered(String patient) {
-        
-    }
 
-    @When("'$name', '$phone', '$gender', '$birth', '$address', '$maritalStatus', '$breed' and '$ethinicity' are given")
-    public void whenDemographicDataIsInputed() {
-        
-    }
+	/**********************************************************************/
+	@Given("Patient '$patient' is registered in the system")
+	public void givenThePatientIsRegistered(String patient) {
 
-    @Then("The following '$alert' should appear warning about a possible duplicated entry")
-    public void thenAnAlertShouldApear(String patient) {
-        
-    }    
+	}
 
+	@When("'$name', '$phone', '$gender', '$birth', '$address', '$maritalStatus', '$breed' and '$ethinicity' are given")
+	public void whenDemographicDataIsInputed() {
+
+	}
+
+	@Then("The following '$alert' should appear warning about a possible duplicated entry")
+	public void thenAnAlertShouldApear(String patient) {
+
+	}
 
 }

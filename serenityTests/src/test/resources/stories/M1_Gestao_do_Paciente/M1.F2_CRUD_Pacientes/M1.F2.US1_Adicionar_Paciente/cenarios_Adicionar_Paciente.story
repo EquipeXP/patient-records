@@ -19,8 +19,8 @@ And: The patient should be registered anyway
 And: An input on auditing system is added
 
 
-Scenario: Successfully register ‘João of Silva’
-Given: Patient ‘João of Silva’ is not registered in the system
+Scenario: Successfully register 'João of Silva'
+Given:  Patient 'João of Silva' is not registered in the system
 When: user insert data name, telephone,  admGender, birthTime, address, maritalState, breed and ethnicity.
 Then: user should see 'Paciente adicionado com sucesso'.
 And: an input on auditing system is added.
