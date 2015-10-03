@@ -10,7 +10,9 @@ When: Name, Phone, Gender, Birth, Address, maritalStatus, Breed and Ethinicity a
 |Name		|Phone			|Gender		|Birth					|Address				|maritalStatus	|breed		|ethinicity	|
 |Joao Silva	|19 999866969	|Masculino	|19/02/1988 14:37:46	|Rua das paredes, 999	|Viúva(o)		|Bangladeshi|Panamenho	|
 
-Then: An alert should appear warning about a possible   duplicated entry
+Then: The following Alert should appear warning about a possible duplicated entry
+|Alert																	|
+|Esse paciente que sera adicionado muito provavelmente esta duplicado	|
 And: Maria Cardoso confirms
 And: The patient should be registered anyway
 And: An input on auditing system is added

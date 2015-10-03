@@ -26,5 +26,33 @@ public class DefinitionSteps {
     public void thenTheyShouldSeeThePatient(String patient) {
         endUser.should_see_patient(patient);
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /**********************************************************************/
+    @Given("Patient '$patient' is registered in the system")
+    public void givenThePatientIsRegistered(String patient) {
+        
+    }
+
+    @When("'$name', '$phone', '$gender', '$birth', '$address', '$maritalStatus', '$breed' and '$ethinicity' are given")
+    public void whenDemographicDataIsInputed() {
+        
+    }
+
+    @Then("The following '$alert' should appear warning about a possible duplicated entry")
+    public void thenAnAlertShouldApear(String patient) {
+        
+    }    
 
 }

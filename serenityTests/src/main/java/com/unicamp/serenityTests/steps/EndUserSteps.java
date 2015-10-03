@@ -23,4 +23,9 @@ public class EndUserSteps extends ScenarioSteps {
     public void is_the_main_page() {
         dictionaryPage.open();
     }
+    
+    @Step
+    public void is_patient_registered(){
+    	
+    }
 }
