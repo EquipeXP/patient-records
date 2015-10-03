@@ -13,6 +13,7 @@ When: Name, Phone, Gender, Birth, Address, maritalStatus, Breed and Ethinicity a
 Then: The following Alert should appear warning about a possible duplicated entry
 |Alert																	|
 |Esse paciente que sera adicionado muito provavelmente esta duplicado	|
+
 And: Maria Cardoso confirms
 And: The patient should be registered anyway
 And: An input on auditing system is added
