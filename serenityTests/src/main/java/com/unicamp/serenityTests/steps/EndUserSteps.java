@@ -20,10 +20,32 @@ public class EndUserSteps extends ScenarioSteps {
 				hasItem(containsString(patient)));
 	}
 
-	@Step
-	public void is_the_main_page() {
-		dictionaryPage.open();
-	}
+    @Step
+    public void is_the_main_page() {
+        dictionaryPage.open();
+    }
+    
+    @Step
+    public void is_patient_registered(){
+    	;
+    }
+    
+    @Step
+    public void insert_data(String name, int telephone, String admGender,
+			String birthTime, String address, String maritalState,
+			String breed, String ethnicity) {
+    	;
+    }
+    
+    @Step
+    public void should_see_msg(String message) {
+    	;
+    }
+    
+    @Step
+    public void check_log_created(){
+    	;
+    }
 
 	@Step
 	public void check_patient_registered(String patient) {
@@ -77,13 +99,16 @@ public class EndUserSteps extends ScenarioSteps {
 			String breed, String ethnicity) {
 		;
 	}
-
+	
 	@Step
-	public void should_see_msg(String message) {
+	public void check_empty_data(String name, int telephone,
+			String admGender, String birthTime, String address,
+			String maritalState, String breed, String ethnicity){
 		;
 	}
 
 	private boolean is_patient_registered(String patient) {
 		return true;
 	}
+
 }

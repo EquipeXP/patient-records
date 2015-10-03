@@ -35,7 +35,7 @@ public class DefinitionSteps {
 	}
 
 	@When("user insert data '$name', '$telephone',  '$admGender', '$birthTime', '$address', '$maritalState', '$breed' and '$ethnicity'")
-	public void whenUserInsertData(String name, String telephone,
+	public void whenUserInsertData(String name, int telephone,
 			String admGender, String birthTime, String address,
 			String maritalState, String breed, String ethnicity) {
 		endUser.insert_data(name, telephone, admGender, birthTime, address,
@@ -47,20 +47,52 @@ public class DefinitionSteps {
 		endUser.should_see_msg(message);
 	}
 
-	/**********************************************************************/
-	@Given("Patient '$patient' is registered in the system")
-	public void givenThePatientIsRegistered(String patient) {
+    
+    /**********************************************************************/
+    @Given("Patient '$patient' is registered in the system")
+    public void givenThePatientIsRegistered(String patient) {
+    	endUser.check_patient_registered(patient);
+    }
 
-	}
+    @When("'$name', '$phone', '$gender', '$birth', '$address', '$maritalStatus', '$breed' and '$ethinicity' are given")
+    public void whenDemographicDataIsInputed(String name, int telephone,
+			String admGender, String birthTime, String address,
+			String maritalState, String breed, String ethnicity) {
+    	endUser.insert_data(name, telephone, admGender, birthTime, address,
+				maritalState, breed, ethnicity);
+    }
 
-	@When("'$name', '$phone', '$gender', '$birth', '$address', '$maritalStatus', '$breed' and '$ethinicity' are given")
-	public void whenDemographicDataIsInputed() {
-
-	}
-
-	@Then("The following '$alert' should appear warning about a possible duplicated entry")
-	public void thenAnAlertShouldApear(String patient) {
-
-	}
+    @Then("The following '$alert' should appear warning about a possible duplicated entry")
+    public void thenAnAlertShouldApear(String alert) {
+    	endUser.should_see_msg(alert);
+    }
+    
+    /**********************************************************************/
+    @Given("Patient '$patient' is not registered in the system")
+    public void givenThePatientIsntRegistered(String patient){
+    	endUser.check_patient_not_registered(patient);
+    }
+    
+    @When("Secretary tries to register Patient")
+    public void whenSecretaryTriesToRegister(){
+    
+    }
+    
+    @Then("A Auditory log is created")
+    public void thenAAuditoryLogIsCreated(){
+    	endUser.check_log_created();
+    }
+    
+    /**********************************************************************/
+    //Este @Given eh o mesmo do Cenario acima !
+    @When("One of the following data: $name, $phone, $gender, $birth, $address, $maritalStatus, $breed and $ethinicity is missing")
+    public void whenDataIsMissing(String name, int telephone,
+			String admGender, String birthTime, String address,
+			String maritalState, String breed, String ethnicity){
+    	
+    	endUser.check_empty_data(name, telephone,
+    			admGender, birthTime, address,
+    			maritalState, breed, ethnicity);
+    }
 
 }
