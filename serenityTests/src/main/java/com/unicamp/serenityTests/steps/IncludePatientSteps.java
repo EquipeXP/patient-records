@@ -11,22 +11,22 @@ public class IncludePatientSteps extends ScenarioSteps {
 
 	@Step
 	public void insertName(String name) {
-
+		mainPepPage.typeName(name);
 	}
 
 	@Step
 	public void insertPhoneNumber(String phoneNumber) {
-
+		mainPepPage.typePhone(phoneNumber);
 	}
 
 	@Step
 	public void selectGender(String gender) {
-
+		mainPepPage.chooseGender(gender);
 	}
 
 	@Step
 	public void insertBirthDate(String birthDate) {
-
+		mainPepPage.typeBirthDate(birthDate);
 	}
 
 	@Step

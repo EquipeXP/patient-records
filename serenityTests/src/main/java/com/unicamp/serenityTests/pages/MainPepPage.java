@@ -64,4 +64,26 @@ public class MainPepPage extends PageObject {
             }
         }
     }
+    
+    public void chooseMaritalStatus(String patientGender){
+    	WebElement select = find(By.id("patientGender"));
+        List<WebElement> options = select.findElements(By.tagName("option"));
+        for(WebElement option : options){
+            if(option.getText().equals(patientGender)) {
+                option.click();
+                break;
+            }
+        }
+    }
+    
+    public void chooseEthnicity(String patientGender){
+    	WebElement select = find(By.id("patientGender"));
+        List<WebElement> options = select.findElements(By.tagName("option"));
+        for(WebElement option : options){
+            if(option.getText().equals(patientGender)) {
+                option.click();
+                break;
+            }
+        }
+    }
 }
