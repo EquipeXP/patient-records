@@ -26,5 +26,11 @@ public class PatientRepository implements IPatientRepository {
 		
 		return patients;
 	}
+
+	@Override
+	public Patient addPatient(Patient patient) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

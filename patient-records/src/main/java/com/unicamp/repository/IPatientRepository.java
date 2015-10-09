@@ -7,4 +7,5 @@ import com.unicamp.entity.Patient;
 public interface IPatientRepository {
 
 	List<Patient> getAllPatients();
+	Patient addPatient(Patient patient);
 }
