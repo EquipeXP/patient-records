@@ -7,11 +7,17 @@ import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 
 import com.unicamp.serenityTests.steps.EndUserSteps;
+import com.unicamp.serenityTests.steps.IncludePatientSteps;
 
 public class DefinitionSteps {
 
 	@Steps
 	EndUserSteps endUser;
+	
+	@Steps
+	IncludePatientSteps includePatientSteps;
+	
+	
 
 	@Given("the user is on the PEP main page")
 	public void givenTheUserIsOnThePEPMainPage() {
@@ -35,10 +41,10 @@ public class DefinitionSteps {
 	}
 
 	@When("user insert data '$name', '$telephone',  '$admGender', '$birthTime', '$address', '$maritalState', '$breed' and '$ethnicity'")
-	public void whenUserInsertData(String name, int telephone,
+	public void whenUserInsertData(String name, String telephone,
 			String admGender, String birthTime, String address,
 			String maritalState, String breed, String ethnicity) {
-		endUser.insert_data(name, telephone, admGender, birthTime, address,
+		includePatientSteps.insert_data(name, telephone, admGender, birthTime, address,
 				maritalState, breed, ethnicity);
 	}
 
