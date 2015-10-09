@@ -29,8 +29,16 @@ public class PatientRepository implements IPatientRepository {
 
 	@Override
 	public Patient addPatient(Patient patient) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Session session = _session.get();
+		session.beginTransaction();
+		
+		session.save(patient);
+		
+		session.getTransaction().commit();
+		session.close();
+		
+		return patient;
 	}
 	
 }
