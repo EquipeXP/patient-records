@@ -12,10 +12,87 @@ public class Patient {
 
 	@Id
 	@GeneratedValue
-	private int id;
-		
+	private int id;	
+	
 	@Column(name="name")
 	private String name;
+	
+	@Column(name="phone")
+	private String phone;
+	
+	@Column(name="genderAdm")
+	private String genderAdm;
+	
+	@Column(name="birthDate")
+	private String birthDate;
+	
+	@Column(name="address")
+	private String address;
+	
+	@Column(name="maritalStatus")
+	private String maritalStatus;
+	
+	@Column(name="breed")
+	private String breed;
+	
+	@Column(name="ethnicGroup")
+	private String ethnicGroup;
+	
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(String birthDate) {
+		this.birthDate = birthDate;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getMaritalStatus() {
+		return maritalStatus;
+	}
+
+	public void setMaritalStatus(String maritalStatus) {
+		this.maritalStatus = maritalStatus;
+	}
+
+	public String getBreed() {
+		return breed;
+	}
+
+	public void setBreed(String breed) {
+		this.breed = breed;
+	}
+
+	public String getEthnicGroup() {
+		return ethnicGroup;
+	}
+
+	public void setEthnicGroup(String ethnicGroup) {
+		this.ethnicGroup = ethnicGroup;
+	}
+	
+	public String getGenderAdm() {
+		return genderAdm;
+	}
+
+	public void setGenderAdm(String genderAdm) {
+		this.genderAdm = genderAdm;
+	}
 
 	public int getId() {
 		return id;
