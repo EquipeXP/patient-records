@@ -81,4 +81,14 @@ public class InsertPatientPage extends PageObject {
         }
     }
     
+    public void clickOnSave() {
+    	WebElement saveButton = find(By.id("saveButton"));
+    	saveButton.click();
+    }
+    
+    public void clickOnCancel() {
+    	WebElement cancelButton = find(By.id("cancelButton"));
+    	cancelButton.click();
+    }
+    
 }

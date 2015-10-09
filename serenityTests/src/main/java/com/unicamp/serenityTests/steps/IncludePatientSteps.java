@@ -1,62 +1,62 @@
 package com.unicamp.serenityTests.steps;
 
-import com.unicamp.serenityTests.pages.MainPepPage;
+import com.unicamp.serenityTests.pages.InsertPatientPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
 public class IncludePatientSteps extends ScenarioSteps {
 
-	MainPepPage mainPepPage;
+	InsertPatientPage insertPatientPage;
 
 	@Step
 	public void insertName(String name) {
-		mainPepPage.typeName(name);
+		insertPatientPage.typeName(name);
 	}
 
 	@Step
 	public void insertPhoneNumber(String phoneNumber) {
-		mainPepPage.typePhone(phoneNumber);
+		insertPatientPage.typePhone(phoneNumber);
 	}
 
 	@Step
 	public void selectGender(String gender) {
-		mainPepPage.chooseGender(gender);
+		insertPatientPage.chooseGender(gender);
 	}
 
 	@Step
 	public void insertBirthDate(String birthDate) {
-		mainPepPage.typeBirthDate(birthDate);
+		insertPatientPage.typeBirthDate(birthDate);
 	}
 
 	@Step
 	public void insertAddress(String address) {
-
+		insertPatientPage.typeAddress(address);
 	}
 
 	@Step
 	public void selectMaritalState(String maritalState) {
-
+		insertPatientPage.chooseMaritalStatus(maritalState);
 	}
 
 	@Step
 	public void selectRace(String race) {
-
+		insertPatientPage.chooseBreed(race);
 	}
 
 	@Step
 	public void selectEthnicity(String ethnicity) {
-
+		insertPatientPage.chooseEthnicity(ethnicity);
 	}
 
 	@Step
 	public void saveForm() {
-
+		insertPatientPage.clickOnSave();
 	}
 
 	@Step
 	public void cancelForm() {
-
+		insertPatientPage.clickOnCancel();
 	}
 
 	@Step
@@ -82,6 +82,11 @@ public class IncludePatientSteps extends ScenarioSteps {
 		fillForm(name, phoneNumber, gender, birthDate, address, maritalState,
 				race, ethnicity);
 		saveForm();
+	}
+	
+	@Step
+	public void shoudlSeeMessage(String message) {
+		
 	}
 
 }
