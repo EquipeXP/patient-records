@@ -6,9 +6,13 @@
 	
 		return {
 
-            getPatients: function (){
+            getPatients: function () {
 
                 return $http.get(BASE_API_ADDRESS + 'patient');
+            },
+            addPatient: function(patient) {
+
+                return $http.post(BASE_API_ADDRESS + 'patient', patient);
             }
         }
 	}

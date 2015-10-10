@@ -2,7 +2,7 @@
 
     'use strict';
 
-    function patientController($scope) {
+    function patientController($scope, $location, PatientService) {
 
         $scope.patient = {
             name: undefined,
@@ -19,12 +19,19 @@
 
         $scope.save = function() {
 
-            console.log($scope.patient);
+            PatientService.addPatient($scope.patient)
+                .then(function(patient) {
+
+                    console.log(patient);
+                }, function(err) {
+
+                    console.log(err);
+                });
         };
 
         $scope.cancel = function() {
 
-            console.log("HE IS CANCELLING ME!!");
+            $location.path('/');
         };
     }
 
