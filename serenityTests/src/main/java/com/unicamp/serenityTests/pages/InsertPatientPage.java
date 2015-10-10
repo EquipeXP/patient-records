@@ -15,7 +15,7 @@ public class InsertPatientPage extends PageObject {
 	
     public void typeName(String patientName){
     	WebElementFacade value = find(By.id("patientName"));
-    	value.click();
+    	//value.click();
     	value.type(patientName);
     }
     

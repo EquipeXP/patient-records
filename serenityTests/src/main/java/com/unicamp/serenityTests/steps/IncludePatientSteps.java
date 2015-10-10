@@ -7,8 +7,15 @@ import net.thucydides.core.steps.ScenarioSteps;
 
 public class IncludePatientSteps extends ScenarioSteps {
 
+	private static final long serialVersionUID = 1L;
+	
 	InsertPatientPage insertPatientPage;
 
+	@Step
+	public void is_on_the_new_patient_page() {
+		insertPatientPage.open();
+	}
+	
 	@Step
 	public void insertName(String name) {
 		insertPatientPage.typeName(name);

@@ -14,11 +14,6 @@ public class DefinitionSteps {
 	@Steps
 	EndUserSteps endUser;
 	
-	@Steps
-	IncludePatientSteps includePatientSteps;
-	
-	
-
 	@Given("the user is on the PEP main page")
 	public void givenTheUserIsOnThePEPMainPage() {
 		endUser.is_the_main_page();

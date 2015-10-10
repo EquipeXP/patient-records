@@ -6,16 +6,34 @@ import org.jbehave.core.annotations.When;
 
 import com.unicamp.serenityTests.steps.IncludePatientSteps;
 
+import net.thucydides.core.annotations.Step;
+import net.thucydides.core.annotations.Steps;
+
 public class M1F2US1DefinitionSteps {
 	
+	@Steps
 	IncludePatientSteps includePatientSteps;
 
-	/**********************************************************************/
-	@Given("Patient '$patient' is not registered in the system")
-	public void givenPatientIsNotRegistered(String patient) {
-
+	@Given("'$user' is on the new patient page")
+	public void givenTheUserIsOnTheNewPatientPage(String user) {
+		includePatientSteps.is_on_the_new_patient_page();
 	}
-
+	
+	@When("'$name', '$phone', '$gender', '$birth', '$address', '$maritalStatus', '$breed' and '$ethinicity' are given")
+	public void whenDemographicDataIsInputed(String name, String telephone,
+			String admGender, String birthTime, String address,
+			String maritalState, String breed, String ethnicity) {
+		
+		includePatientSteps.fillForm(name, telephone, admGender, birthTime, address, maritalState, breed, ethnicity);
+		includePatientSteps.saveForm();
+	}
+	
+	@Then("The following '$alert' should appear warning about a possible duplicated entry")
+	public void thenAnAlertShouldApear(String alert) {
+		includePatientSteps.shoudlSeeMessage(alert);
+	}
+		
+	/**********************************************************************/
 	@When("user insert data '$name', '$telephone',  '$admGender', '$birthTime', '$address', '$maritalState', '$breed' and '$ethnicity'")
 	public void whenUserInsertData(String name, String telephone,
 			String admGender, String birthTime, String address,
@@ -30,23 +48,9 @@ public class M1F2US1DefinitionSteps {
 	}
 
 	/**********************************************************************/
-	@Given("Patient '$patient' is registered in the system")
-	public void givenThePatientIsRegistered(String patient) {
-//		includePatientSteps.check_patient_registered(patient);
-	}
+	
 
-	@When("'$name', '$phone', '$gender', '$birth', '$address', '$maritalStatus', '$breed' and '$ethinicity' are given")
-	public void whenDemographicDataIsInputed(String name, String telephone,
-			String admGender, String birthTime, String address,
-			String maritalState, String breed, String ethnicity) {
-		includePatientSteps.insert_data(name, telephone, admGender, birthTime, address,
-				maritalState, breed, ethnicity);
-	}
-
-	@Then("The following '$alert' should appear warning about a possible duplicated entry")
-	public void thenAnAlertShouldApear(String alert) {
-		includePatientSteps.shoudlSeeMessage(alert);
-	}
+	
 
 	/**********************************************************************/
 	@Given("Patient '$patient' is not registered in the system")
