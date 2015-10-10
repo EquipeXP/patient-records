@@ -29,4 +29,41 @@ public class MainPepPage extends PageObject {
             }
         };
     }
+    
+    public void typeName(String patientName){
+    	WebElementFacade value = find(By.id("patientName"));
+    	value.click();
+    	value.type(patientName);
+    }
+    
+    public void typePhone(String patientPhone){
+    	WebElementFacade value = find(By.id("patientPhone"));
+    	value.click();
+    	value.type(patientPhone);
+    }
+    
+    public void typeBirthDate(String patientBirthDate){
+    	WebElementFacade value = find(By.id("patientBirthDate"));
+    	value.click();
+    	value.type(patientBirthDate);
+    }
+    
+    public void typeAddress(String patientAddress){
+    	WebElementFacade value = find(By.id("patientAdress"));
+    	value.click();
+    	value.type(patientAddress);
+    }
+    
+    public void chooseGender(String patientGender){
+    	WebElementFacade value = find(By.id("patientGender"));
+    	value.click();
+    	WebElement select = value.findElement(By.name("select"));
+        List<WebElement> options = select.findElements(By.tagName("option"));
+        for(WebElement option : options){
+            if(option.getText().equals("Name you want")) {
+                option.click();
+                break;
+            }
+        }
+    }
 }
