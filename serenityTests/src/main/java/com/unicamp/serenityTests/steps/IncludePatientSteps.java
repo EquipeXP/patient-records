@@ -67,18 +67,17 @@ public class IncludePatientSteps extends ScenarioSteps {
 	}
 
 	@Step
-	public void fillForm(String name, String phoneNumber, String gender,
-			String birthDate, String address, String maritalState, String race,
-			String ethnicity) {
+	public void fillForm(String name, String phone, String gender,String birth,
+			String address,String maritalstatus,String breed,String ethinicity) {
 
 		insertName(name);
-		insertPhoneNumber(phoneNumber);
+		insertPhoneNumber(phone);
 		selectGender(gender);
-		insertBirthDate(birthDate);
+		insertBirthDate(birth);
 		insertAddress(address);
-		selectMaritalState(maritalState);
-		selectRace(race);
-		selectEthnicity(ethnicity);
+		selectMaritalState(maritalstatus);
+		selectRace(breed);
+		selectEthnicity(ethinicity);
 	}
 
 	@Step

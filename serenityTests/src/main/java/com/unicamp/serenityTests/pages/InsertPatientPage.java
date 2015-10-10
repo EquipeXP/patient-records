@@ -15,25 +15,21 @@ public class InsertPatientPage extends PageObject {
 	
     public void typeName(String patientName){
     	WebElementFacade value = find(By.id("patientName"));
-    	//value.click();
     	value.type(patientName);
     }
     
     public void typePhone(String patientPhone){
     	WebElementFacade value = find(By.id("patientPhone"));
-    	value.click();
     	value.type(patientPhone);
     }
     
     public void typeBirthDate(String patientBirthDate){
     	WebElementFacade value = find(By.id("patientBirthDate"));
-    	value.click();
     	value.type(patientBirthDate);
     }
     
     public void typeAddress(String patientAddress){
-    	WebElementFacade value = find(By.id("patientAdress"));
-    	value.click();
+    	WebElementFacade value = find(By.id("patientAddress"));
     	value.type(patientAddress);
     }
     
@@ -49,7 +45,7 @@ public class InsertPatientPage extends PageObject {
     }
     
     public void chooseMaritalStatus(String patientMaritialStatus){
-    	WebElement select = find(By.id("patientMaritialStatus"));
+    	WebElement select = find(By.id("patientMaritalStatus"));
         List<WebElement> options = select.findElements(By.tagName("option"));
         for(WebElement option : options){
             if(option.getText().equals(patientMaritialStatus)) {
@@ -71,7 +67,7 @@ public class InsertPatientPage extends PageObject {
     }
     
     public void chooseEthnicity(String patientEthinicGroup){
-    	WebElement select = find(By.id("patientEthinicGroup"));
+    	WebElement select = find(By.id("patientEthnicGroup"));
         List<WebElement> options = select.findElements(By.tagName("option"));
         for(WebElement option : options){
             if(option.getText().equals(patientEthinicGroup)) {

@@ -19,12 +19,12 @@ public class M1F2US1DefinitionSteps {
 		includePatientSteps.is_on_the_new_patient_page();
 	}
 	
-	@When("'$name', '$phone', '$gender', '$birth', '$address', '$maritalStatus', '$breed' and '$ethinicity' are given")
-	public void whenDemographicDataIsInputed(String name, String telephone,
-			String admGender, String birthTime, String address,
-			String maritalState, String breed, String ethnicity) {
+	@When("$name, $phone, $gender, $birth, $address, $maritalstatus, $breed and $ethinicity are given")
+	public void whenDemographicDataIsInputed(String name, String phone,
+			String gender, String birth, String address,
+			String maritalstatus, String breed, String ethinicity) {
 		
-		includePatientSteps.fillForm(name, telephone, admGender, birthTime, address, maritalState, breed, ethnicity);
+		includePatientSteps.fillForm(name, phone, gender, birth, address, maritalstatus, breed, ethinicity);
 		includePatientSteps.saveForm();
 	}
 	
