@@ -25,7 +25,7 @@ public class SessionFactoryFactory implements Factory<SessionFactory> {
 		Configuration configuration = new Configuration()
 				.addPackage("com.unicamp.entity")
 				.addProperties(prop)
-				.addAnnotatedClass(Patient.class);
+				.addAnnotatedClass(Patient.class);						
 		
         StandardServiceRegistryBuilder srBuilder = new StandardServiceRegistryBuilder();
         srBuilder.applySettings(configuration.getProperties());
