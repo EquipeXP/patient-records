@@ -55,12 +55,10 @@ public class MainPepPage extends PageObject {
     }
     
     public void chooseGender(String patientGender){
-    	WebElementFacade value = find(By.id("patientGender"));
-    	value.click();
-    	WebElement select = value.findElement(By.name("select"));
+    	WebElement select = find(By.id("patientGender"));
         List<WebElement> options = select.findElements(By.tagName("option"));
         for(WebElement option : options){
-            if(option.getText().equals("Name you want")) {
+            if(option.getText().equals(patientGender)) {
                 option.click();
                 break;
             }
