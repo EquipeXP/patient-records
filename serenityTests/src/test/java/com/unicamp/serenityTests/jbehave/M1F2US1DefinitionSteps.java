@@ -7,7 +7,6 @@ import org.jbehave.core.annotations.When;
 
 import com.unicamp.serenityTests.steps.IncludePatientSteps;
 
-import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
 
 public class M1F2US1DefinitionSteps {
@@ -34,6 +33,21 @@ public class M1F2US1DefinitionSteps {
 	public void whenSecretaryTriesToRegister(@Named("secretary") String secretary, 
 			@Named("patient") String patient) {
 
+	}
+	
+	@Then("An $alert should appear")
+	public void thenAnAlertShouldAppear(String alert){
+		includePatientSteps.shoudlSeeMessage(alert);
+	}
+	
+	@Then("The patient shouldn't be registered")
+	public void thenPatientShouldntBeRegistered(){
+		
+	}
+	
+	@Then("An input on auditing system is added")
+	public void thenAnInputToAuditIsAdded(){
+		
 	}
 	
 	@Then("user should see '$message'")

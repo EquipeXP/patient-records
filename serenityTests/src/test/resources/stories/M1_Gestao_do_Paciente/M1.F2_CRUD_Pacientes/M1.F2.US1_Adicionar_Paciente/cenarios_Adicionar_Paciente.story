@@ -13,7 +13,7 @@ Scenario: Unsuccessfully register 'João of Silva' because one or more mandatory
 Given 'Manoel de Abreu' is on the new patient page 
 When <name>, <phone>, <gender>, <birth>, <address>, <maritalstatus>, <breed> and <ethinicity> are given
 Then An <alert> should appear
-And The patient shouldn’t be registered
+And The patient shouldn't be registered
 And An input on auditing system is added
 
 Examples:
