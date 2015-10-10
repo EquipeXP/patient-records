@@ -6,7 +6,7 @@ And an input on auditing system is added.
 
 Examples:	
 |name		|phone			|gender		|birth					|address				|maritalstatus	|breed		|ethinicity	|
-João Silva | 19 999866969 | Masculino | 19/02/1988 14:37:46 | Rua das paredes, 999 |Casado|Inglês|Panamenho| 
+|João Silva | 19 999866969 | Masculino | 19/02/1988 14:37:46 | Rua das paredes, 999 |Casado|Inglês|Panamenho| 
 
 
 Scenario: Unsuccessfully register 'João of Silva' because one or more mandatory field among (Nome, Endereço, Telefone, …) is missing
@@ -26,5 +26,5 @@ Examples:
 
 Scenario: Auditory trail
 Given 'Manoel de Abreu' is on the new patient page
-When Maria Cardoso tries to register 'Joao of Silva'
+When 'Maria Cardoso' tries to register 'Joao of Silva'
 Then A Auditory log is created
