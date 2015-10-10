@@ -1,10 +1,14 @@
 Scenario: Register 'João of Silva' when there is already one patient with the same name
 Given 'Manoel de Abreu' is on the new patient page
 When '<Name>', '<Phone>', '<Gender>', '<Birth>', '<Address>', '<maritalStatus>', '<breed>' and '<ethinicity>' are given
+
+Examples:
 |Name		|Phone			|Gender		|Birth					|Address				|maritalStatus	|breed		|ethinicity	|
 |Joao of Silva	|19 999866969	|Masculino	|19/02/1988 14:37:46	|Rua das paredes, 999	|Viúva(o)		|Bangladeshi|Panamenho	|
 
 Then The following Alert should appear warning about a possible duplicated entry
+
+Examples:
 |Alert																	|
 |Esse paciente que sera adicionado muito provavelmente esta duplicado	|
 
