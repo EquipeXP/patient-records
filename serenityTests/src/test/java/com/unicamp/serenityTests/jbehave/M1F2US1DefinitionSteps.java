@@ -45,14 +45,9 @@ public class M1F2US1DefinitionSteps {
 		
 	}
 	
-	@Then("An input on auditing system is added")
+	@Then("an input on auditing system is added")
 	public void thenAnInputToAuditIsAdded(){
 		
-	}
-	
-	@Then("user should see '$message'")
-	public void thenUserShouldSee(@Named("message") String message) {
-		includePatientSteps.shoudlSeeMessage(message);
 	}
 
 	@Then("A Auditory log is created")

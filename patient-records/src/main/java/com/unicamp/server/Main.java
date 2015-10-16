@@ -31,6 +31,7 @@ public class Main {
     			.packages("com.unicamp.controllers")
     			.packages("org.glassfish.jersey.examples.jsonmoxy")
                 .register(createMoxyJsonResolver())
+                .register(ThrowableExceptionMapper.class)
                 .register(new DependencyBinder());
     	
     	return GrizzlyHttpServerFactory.createHttpServer(URI.create(BASE_URI), rc);

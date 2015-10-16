@@ -32,8 +32,12 @@
 		<script src="js/controllers/patient/patientNewController.js"></script>
 	    
 	    <script src="js/services/patientService.js"></script>
+		<script src="js/services/alertService.js"></script>
 	</head>
 	<body ng-controller="ApplicationController" class="sidebar-mini skin-blue">
+        <div class="alert-container">
+            <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" dismiss-on-timeout="5000" >{{alert.msg}}</alert>
+        </div>
 		<div class="wrapper">
 			<header class="main-header">
 				<a href="#" class="logo">

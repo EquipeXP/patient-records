@@ -87,4 +87,15 @@ public class InsertPatientPage extends PageObject {
     	cancelButton.click();
     }
     
+    public String getMessage() {
+    	try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+    	
+    	WebElementFacade alertMessage = find(By.cssSelector(".alert-container .alert span.ng-binding.ng-scope"));
+    	return alertMessage.getText();
+    }
+    
 }
