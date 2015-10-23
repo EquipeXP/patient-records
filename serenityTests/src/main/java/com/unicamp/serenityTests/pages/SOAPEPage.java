@@ -11,7 +11,23 @@ import org.openqa.selenium.WebElement;
 
 @DefaultUrl("http://localhost:8080/#/patient/new")
 public class SOAPEPage extends PageObject {
-	
+
 	// TODO
+	
+	public String getPatientNameFromHeader() {
+		return "Joao of Silva";
+	}
+
+	public String getPatientBirthDateFromHeader() {
+		return "19/12/1988";
+	}
+
+	public String getPatientGenderFromHeader() {
+		return "Feminino";
+	}
+
+	public String getPatientMaritalStatusFromHeader() {
+		return "Legalmente Separado";
+	}
     
 }
