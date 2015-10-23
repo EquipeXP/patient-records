@@ -34,6 +34,16 @@ public class StartSOAPESteps extends ScenarioSteps {
 		// TODO Auto-generated method stub
 		
 	}
+
 	
+	@Step
+	public void is_on_the_user_consultation_page(Integer id) {
+		
+	}
+
+	@Step
+	public void header_should_have_patient_information(String name, String birthdate, String gender, String maritalStatus) {
+		
+	}
 
 }
