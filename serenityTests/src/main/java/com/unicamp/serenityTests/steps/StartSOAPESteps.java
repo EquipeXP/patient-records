@@ -1,5 +1,11 @@
 package com.unicamp.serenityTests.steps;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.hasItem;
+
+import org.hamcrest.core.IsEqual;
+
 import com.unicamp.serenityTests.pages.SOAPEPage;
 
 import net.thucydides.core.annotations.Step;
@@ -17,8 +23,7 @@ public class StartSOAPESteps extends ScenarioSteps {
 
 	@Step
 	public void isOnTheSearchPage() {
-		// TODO Auto-generated method stub
-		
+		SOAPEPg.open();
 	}
 
 	@Step
@@ -28,9 +33,8 @@ public class StartSOAPESteps extends ScenarioSteps {
 	}
 
 	@Step
-	public void shouldSeeSOAPEModeForUser(String user) {
-		// TODO Auto-generated method stub
-		
+	public void shouldSeeSOAPEModeForUser(String user){
+		// TODO Auto-generated method stub	
 	}
 	
 	@Step
@@ -47,5 +51,4 @@ public class StartSOAPESteps extends ScenarioSteps {
 		assertThat("Patient gender is on screen", SOAPEPg.getPatientGenderFromHeader().equals(gender));
 		assertThat("Patient marital status is on screen", SOAPEPg.getPatientMaritalStatusFromHeader().equals(maritalStatus));
 	}
-
 }

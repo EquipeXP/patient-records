@@ -9,9 +9,8 @@ import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-@DefaultUrl("http://localhost:8080/#/patient/new")
+@DefaultUrl("http://localhost:8080/#/")
 public class SOAPEPage extends PageObject {
-
 	// TODO
 	
 	public String getPatientNameFromHeader() {
