@@ -18,8 +18,18 @@ public class StartSOAPESteps extends ScenarioSteps {
 	SOAPEPage SOAPEPg;
 
 	@Step
-	public void is_on_the_new_patient_page() {
+	public void isOnTheSearchPage() {
 		SOAPEPg.open();
 	}
-	
+
+	@Step
+	public void clickModeStartSOAPEForUser(String user) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Step
+	public void shouldSeeSOAPEModeForUser(String user){
+		// TODO Auto-generated method stub	
+	}
 }
