@@ -27,6 +27,8 @@ public class PatientController {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void createPatient(Patient patient) {
+		
+		patient.validate();
 		_patientRepository.addPatient(patient);
 	}
 }

@@ -1,5 +1,11 @@
 package com.unicamp.serenityTests.steps;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.hasItem;
+
+import org.hamcrest.core.IsEqual;
+
 import com.unicamp.serenityTests.pages.InsertPatientPage;
 
 import net.thucydides.core.annotations.Step;
@@ -92,7 +98,7 @@ public class IncludePatientSteps extends ScenarioSteps {
 	
 	@Step
 	public void shoudlSeeMessage(String message) {
-		
+		assertThat("Message was on screen", insertPatientPage.getMessage().equals(message));
 	}
 
 }

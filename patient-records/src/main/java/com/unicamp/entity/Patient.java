@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.ValidationException;
+import javax.ws.rs.WebApplicationException;
 
 @Entity
 @Table(name="patient") 
@@ -110,4 +112,19 @@ public class Patient {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	public void validate() throws ValidationException {
+		if(this.name == null || this.name.isEmpty())
+			throw new ValidationException("O nome do paciente e obrigatorio");
+		
+		if(this.address == null || this.address.isEmpty())
+			throw new ValidationException("O endereco e obrigatorio");
+		
+		if(this.phone == null || this.phone.isEmpty())
+			throw new ValidationException("O telefone e obrigatorio");
+		
+		if(this.genderAdm == null || this.genderAdm.isEmpty())
+			throw new ValidationException("O genero e obrigatorio");
+	}
+	
 }
