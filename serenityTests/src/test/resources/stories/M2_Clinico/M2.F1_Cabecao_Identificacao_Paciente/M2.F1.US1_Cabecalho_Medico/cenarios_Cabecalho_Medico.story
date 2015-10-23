@@ -1,7 +1,7 @@
 Scenario: See patient main information
 Given 'Manoel de Abreu' is on the patient <name> consultation page
 When 'Manoel de Abreu' sees header
-Then He should see <name>, <birthdate>, <gender>, <maritalStatus>
+Then 'Manoel de Abreu' should see <name>, <birthdate>, <gender>, <maritalStatus>
 
 Examples:
 |name | birthdate | gender | maritalStatus |
