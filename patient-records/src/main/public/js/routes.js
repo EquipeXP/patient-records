@@ -7,11 +7,15 @@
         $routeProvider
             .when('/', {
                 templateUrl: '/templates/views/main.html',
-                controller: 'MainController',
+                controller: 'MainController'
             })
             .when('/patient/new', {
                 templateUrl: '/templates/views/patient/patientNew.html',
-                controller: 'PatientCtrl',
+                controller: 'PatientCtrl'
+            })
+            .when('/consultation/new/:idPatient', {
+                templateUrl: '/templates/views/consultation/consultationNew.html',
+                controller: 'ConsultationNewCtrl'
             })
             .otherwise({
                 redirectTo: '/'

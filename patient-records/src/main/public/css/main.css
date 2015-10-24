@@ -21,6 +21,10 @@ body {
     margin-bottom: 5px;
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 @font-face {
     font-family: 'Roboto Light';
     src: url('../fonts/Roboto-Light.ttf');

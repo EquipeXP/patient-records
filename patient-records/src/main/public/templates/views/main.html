@@ -12,6 +12,11 @@
                             <tr>
                                 <th>Id</th>
                                 <th>Nome</th>
+                                <th>Telefone</th>
+                                <th>Gênero</th>
+                                <th>Data de aniversário</th>
+                                <th>Endereço</th>
+                                <th>Ações</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -21,6 +26,22 @@
                                 </td>
                                 <td>
                                     {{patient.name}}
+                                </td>
+                                <td>
+                                	{{patient.phone}}
+                                </td>
+                                <td>
+                                	{{patient.genderAdm}}
+                                </td>
+                                <td>
+                                	{{patient.birthDate}}                                	
+                                </td>
+                                <td>
+                                	{{patient.address}}
+                                </td>
+                                <td class="text-center">
+                                    <span class="pointer glyphicon glyphicon-edit"
+                                          title="Consulta" ng-click="openConsultation($index)"></span>
                                 </td>
                             </tr>
                             </tbody>
