@@ -23,13 +23,16 @@ public class StartSOAPESteps extends ScenarioSteps {
 	}
 
 	@Step
-	public void clickModeStartSOAPEForUser(String user) {
+	public void clickModeStartSOAPEForUser(String patient) {
+		getDriver().findElements()
 		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Step
-	public void shouldSeeSOAPEModeForUser(String user){
-		// TODO Auto-generated method stub	
+	public void shouldSeeSOAPEModeForUser(String patient){
+		// TOFIX
+		assert(onPage().getDriver().getCurrentUrl() == "http://localhost:8080/#/consultation/new/..." );		
 	}
 }
