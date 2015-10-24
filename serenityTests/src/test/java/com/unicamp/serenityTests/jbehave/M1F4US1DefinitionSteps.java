@@ -6,13 +6,13 @@ import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 
-import com.unicamp.serenityTests.steps.EndUserSteps;
+import com.unicamp.serenityTests.steps.SearchSteps;
 import com.unicamp.serenityTests.steps.IncludePatientSteps;
 
-public class DefinitionSteps {
+public class M1F4US1DefinitionSteps {
 
 	@Steps
-	EndUserSteps endUser;
+	SearchSteps endUser;
 	
 	@Given("the user is on the PEP main page")
 	public void givenTheUserIsOnThePEPMainPage() {
