@@ -40,7 +40,7 @@ public class StartSOAPESteps extends ScenarioSteps {
 	@Step
 	public void is_on_the_user_consultation_page(Integer id) {
 		
-		SOAPEPg.openAt("http://localhost:8080/#/patient/" + id);
+		SOAPEPg.openAt("http://localhost:8080/#/consultation/new/" + id);
 	}
 
 	@Step
