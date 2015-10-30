@@ -28,7 +28,7 @@ public class StartSOAPESteps extends ScenarioSteps {
 
 	@Step
 	public void clickModeStartSOAPEForUser(String patient) {
-		getDriver().findElements()
+		//getDriver().findElements()
 		// TODO Auto-generated method stub
 		
 		
