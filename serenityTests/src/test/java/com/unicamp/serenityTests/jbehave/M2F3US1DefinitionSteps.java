@@ -16,7 +16,7 @@ public class M2F3US1DefinitionSteps {
 	
 	//@Given("User is on the Search Page")
 	@Given("User is at Search Page")
-	public void givenTheUserIsOnTheSearchPage(@Named("user") String user) {
+	public void givenTheUserIsOnTheSearchPage() {
 		startSOAPESteps.isOnTheSearchPage();
 	}
 	
