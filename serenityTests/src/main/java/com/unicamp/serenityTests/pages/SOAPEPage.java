@@ -15,16 +15,15 @@ import org.openqa.selenium.WebElement;
 @DefaultUrl("http://localhost:8080/#/")
 public class SOAPEPage extends PageObject {
 
-	
-    public List<String> getSOAPELink(String patient) {
-        WebElementFacade lnk = find(By.partialLinkText(patient));
- //       return lnk.toString();
-        return new ArrayList<String>();
-        //TOFIX
-    }
+	public List<String> getSOAPELink(String patient) {
+		WebElementFacade lnk = find(By.partialLinkText(patient));
+		// return lnk.toString();
+		return new ArrayList<String>();
+		// TOFIX
+	}
 
 	// TODO
-	
+
 	public String getPatientNameFromHeader() {
 		return "Joao of Silva";
 	}
@@ -39,6 +38,21 @@ public class SOAPEPage extends PageObject {
 
 	public String getPatientMaritalStatusFromHeader() {
 		return "Legalmente Separado";
+	}
+
+	public void insertComplaiant(String complaiant) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public Object getInsertComplaiantMessage() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void doesNotFillComplaiant() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
