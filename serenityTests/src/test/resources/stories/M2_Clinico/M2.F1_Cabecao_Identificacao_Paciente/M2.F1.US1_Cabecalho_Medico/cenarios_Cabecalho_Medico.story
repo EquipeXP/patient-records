@@ -5,4 +5,4 @@ Then 'Manoel de Abreu' should see <name>, <birthdate>, <gender>, <maritalStatus>
 
 Examples:
 |id|name | birthdate | gender | maritalStatus |
-|4|Joao of Silva | 19/12/1988 | Feminino | Legalmente Separado |
+|4|John Doe | 12/01/1995 12:33 | Masculino | Casado |

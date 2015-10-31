@@ -46,30 +46,41 @@ public class StartSOAPESteps extends ScenarioSteps {
 	}
 
 	@Step
-	public void is_on_the_user_consultation_page(Integer id) {
+	public void isOnUserConsultationPage(Integer id) {
 		SOAPEPg.openAt("http://localhost:8080/#/consultation/new/" + id);
 	}
 
+	@Step
 	public void isOnMainComplaiantTab() {
 		SOAPEPg.openAt("");
 	}
 
+	@Step
 	public void insertComplaiant(String complaiant) {
 		SOAPEPg.insertComplaiant(complaiant);
 	}
 
+	@Step
 	public void shouldSeeMessage(String message) {
-		assertThat("Patient name is on screen", SOAPEPg.getInsertComplaiantMessage().equals(message));
+		assertThat("Message is on screen", SOAPEPg.getInsertComplaiantMessage().equals(message));
 	}
 
+	@Step
 	public void doesNotFillComplaiant() {
 		SOAPEPg.doesNotFillComplaiant();
-		// TODO Auto-generated method stub
-		
 	}
 
+	@Step
 	public void mainComplaiantShouldHave(String complaiant) {
 		// TODO Auto-generated method stub (something in database)	
+	}
+
+	@Step
+	public void headerShouldHavePatientInfo(String name, String birthdate, String gender, String maritalStatus) {
+		assertThat("Patient name is on screen", SOAPEPg.getPatientNameFromHeader().equals(name));
+		assertThat("Patient birthdate is on screen", SOAPEPg.getPatientBirthDateFromHeader().equals(birthdate));
+		assertThat("Patient gender is on screen", SOAPEPg.getPatientGenderFromHeader().equals(gender));
+		assertThat("Patient marital status is on screen", SOAPEPg.getPatientMaritalStatusFromHeader().equals(maritalStatus));	
 	}
 
 }

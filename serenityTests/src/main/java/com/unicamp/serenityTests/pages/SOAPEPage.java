@@ -25,19 +25,23 @@ public class SOAPEPage extends PageObject {
 	// TODO
 
 	public String getPatientNameFromHeader() {
-		return "Joao of Silva";
+		WebElement name = find(By.id("patient_name"));
+		return name.toString();
 	}
 
 	public String getPatientBirthDateFromHeader() {
-		return "19/12/1988";
+		WebElement birthDate = find(By.id("patient_birthDate"));
+		return birthDate.toString();
 	}
 
 	public String getPatientGenderFromHeader() {
-		return "Feminino";
+		WebElement gender = find(By.id("patient_genderAdm"));
+		return gender.toString();
 	}
 
 	public String getPatientMaritalStatusFromHeader() {
-		return "Legalmente Separado";
+		WebElement maritalStatus = find(By.id("patient_maritalStatus"));
+		return maritalStatus.toString();
 	}
 
 	public void insertComplaiant(String complaiant) {
