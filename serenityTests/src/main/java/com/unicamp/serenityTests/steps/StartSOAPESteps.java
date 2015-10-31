@@ -33,7 +33,7 @@ public class StartSOAPESteps extends ScenarioSteps {
 
 	@Step
 	public void clickModeStartSOAPEForUser(String patient) {
-		assertThat("Wrong Patient", patient == "Vladmir Putin"); // ID colocado com banco de dados do montanha
+		assertThat("Wrong Patient", patient.equals("Vladmir Putin")); // ID colocado com banco de dados do montanha
 		WebElementFacade definition = SOAPEPg.find(By.id("666"));
         WebElement results = definition.findElement(By.className("text-center"));
         results.click();
@@ -41,7 +41,7 @@ public class StartSOAPESteps extends ScenarioSteps {
 	
 	@Step
 	public void shouldSeeSOAPEModeForUser(String patient){
-		assertThat("Wrong Patient", patient == "Vladmir Putin"); // ID colocado com banco de dados do montanha
+		assertThat("Wrong Patient", patient.equals("Vladmir Putin")); // ID colocado com banco de dados do montanha
 		assertThat("Wrong User page", onPage().getDriver().getCurrentUrl() == "http://localhost:8080/#/consultation/new/" + "666/");		
 	}
 
