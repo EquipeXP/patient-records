@@ -1,24 +1,10 @@
 package com.unicamp.serenityTests.steps;
 
-import static ch.lambdaj.Lambda.convert;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.hasItem;
-
-import java.util.List;
-
-import org.hamcrest.core.IsEqual;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import net.thucydides.core.annotations.Step;
+import net.thucydides.core.steps.ScenarioSteps;
 
 import com.unicamp.serenityTests.pages.SOAPEPage;
-
-import net.thucydides.core.annotations.Step;
-import net.thucydides.core.pages.WebElementFacade;
-import net.thucydides.core.steps.ScenarioSteps;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.hasItem;
 
 public class StartSOAPESteps extends ScenarioSteps {
 
@@ -33,15 +19,13 @@ public class StartSOAPESteps extends ScenarioSteps {
 
 	@Step
 	public void clickModeStartSOAPEForUser(String patient) {
-		assertThat("Wrong Patient", patient == "Vladmir Putin"); // ID colocado com banco de dados do montanha
-		WebElementFacade definition = SOAPEPg.find(By.id("666"));
-        WebElement results = definition.findElement(By.className("text-center"));
-        results.click();
+		assertThat("Wrong Patient", patient.equals("Vladmir Putin"));
+		SOAPEPg.enterConsultationPage("666");
 	}
 	
 	@Step
 	public void shouldSeeSOAPEModeForUser(String patient){
-		assertThat("Wrong Patient", patient == "Vladmir Putin"); // ID colocado com banco de dados do montanha
+		assertThat("Wrong Patient", patient.equals("Vladmir Putin"));
 		assertThat("Wrong User page", onPage().getDriver().getCurrentUrl() == "http://localhost:8080/#/consultation/new/" + "666/");		
 	}
 

@@ -1,6 +1,7 @@
 package com.unicamp.serenityTests.pages;
 
 import static ch.lambdaj.Lambda.convert;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +21,27 @@ public class SOAPEPage extends PageObject {
 		// return lnk.toString();
 		return new ArrayList<String>();
 		// TOFIX
+	}
+	
+	public void enterConsultationPage(String patientId) {
+		
+		WebElementFacade tbody = find(By.tagName("tbody"));
+	    List<WebElement> trs = tbody.findElements(By.tagName("tr"));
+	    
+	    WebElement actionContainer = null;
+	    
+		for(WebElement tr : trs){
+			List<WebElement> tds = tr.findElements(By.tagName("td"));
+			if(tds.get(0).getText().equals(patientId)) {
+				actionContainer = tds.get(tds.size() - 1);
+				break;
+			}
+		}
+		
+		assertThat("Fucking thing", actionContainer != null);
+		
+		WebElement actionButton = actionContainer.findElement(By.tagName("span"));
+		actionButton.click();
 	}
 
 	// TODO
