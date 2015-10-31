@@ -34,9 +34,7 @@ public class StartSOAPESteps extends ScenarioSteps {
 	@Step
 	public void clickModeStartSOAPEForUser(String patient) {
 		assertThat("Wrong Patient", patient == "Vladmir Putin"); // ID colocado com banco de dados do montanha
-		WebElementFacade definition = SOAPEPg.find(By.id("666"));
-        WebElement results = definition.findElement(By.className("text-center"));
-        results.click();
+		SOAPEPg.enterConsultationPage("666");
 	}
 	
 	@Step
