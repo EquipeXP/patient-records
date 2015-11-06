@@ -2,7 +2,7 @@
 	
 	'use strict';
 	
-	function mainController($scope, PatientService) {
+	function mainController($scope, $location, PatientService) {
 		
 		$scope.patients = [];
 		
@@ -15,6 +15,11 @@
 				
 				console.log(err);
 			});
+
+		$scope.openConsultation = function(index) {
+
+			$location.url("/consultation/new/" + $scope.patients[index].id);
+		}
 	}
 	
 	angular.module('app.controllers').controller('MainController', mainController);

@@ -21,6 +21,14 @@ body {
     margin-bottom: 5px;
 }
 
+.pointer {
+    cursor: pointer;
+}
+
+.tabs-container {
+    margin-bottom: 10px;
+}
+
 @font-face {
     font-family: 'Roboto Light';
     src: url('../fonts/Roboto-Light.ttf');
@@ -30,4 +38,11 @@ body {
 
 .table-hover>tbody>tr:hover {
     background-color: #eaeaea;
+}
+
+.tab-content {
+    padding: 10px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
 }
