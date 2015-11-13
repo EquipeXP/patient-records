@@ -40,5 +40,18 @@ public class PatientRepository implements IPatientRepository {
 		
 		return patient;
 	}
-	
+
+	@Override
+	public Patient getPatientById(int patientId) {
+
+		Session session = _session.get();
+		session.beginTransaction();
+
+		Patient patient = session.get(Patient.class, patientId);
+
+		session.close();
+
+		return patient;
+	}
+
 }
