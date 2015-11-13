@@ -8,4 +8,5 @@ public interface IPatientRepository {
 
 	List<Patient> getAllPatients();
 	Patient addPatient(Patient patient);
+	Patient getPatientById(int patientId);
 }
