@@ -83,4 +83,17 @@ public class SOAPEPage extends PageObject {
 
 	}
 
+	public void fillComplaint(String complaint) {
+		// TODO Auto-generated method stub
+		WebElement complaintTab = find(By.id("subjective_tab"));
+		complaintTab.click();
+		WebElement complaintTextArea = find(By.id("main_complaint"));
+		complaintTextArea.sendKeys(complaint);		
+	}
+	
+	public void saveSOAP() {
+		WebElement saveButton = find(By.id("saveButton"));
+		saveButton.click();
+	}
+
 }

@@ -67,4 +67,15 @@ public class StartSOAPESteps extends ScenarioSteps {
 		assertThat("Patient marital status is on screen", SOAPEPg.getPatientMaritalStatusFromHeader().equals(maritalStatus));	
 	}
 
+	@Step
+	public void fillSOAPWith(String complaint) {
+		// TODO Auto-generated method stub
+		fillComplaint(complaint);
+		SOAPEPg.saveSOAP();
+	}
+	
+	public void fillComplaint(String complaint) {
+		SOAPEPg.fillComplaint(complaint);
+	}
+
 }

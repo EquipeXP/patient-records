@@ -1,24 +1,8 @@
-Scenario: Input Main Complaiant
-Given user is at main complaiant tab
-When user insert a <complaiant> description
-Then main complaiant should have <complaiant>
+Scenario: Fill SOAP
+Given 'Manoel de Abreu' is on the patient <id> consultation page
+When 'Manoel de Abreu' fill SOAP with <complaint>
+Then 'Manoel de Abreu' should see <message>
 
-Examples
-
-| complaiant |
-| My head hurts |
-
-Examples
-
-| message |
-| complaiant inserted |
-
-Scenario: Not Input Main Complaiant
-Given user is at main complaiant tab
-When user does not fill complaint
-Then user should see <message>
-
-Examples
-
-| message |
-| complaiant not inserted |
+Examples:
+|id|complaint|message|
+|9 | My head hurts|ok|
