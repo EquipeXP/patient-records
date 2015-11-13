@@ -17,6 +17,13 @@ import org.openqa.selenium.WebElement;
 
 @DefaultUrl("http://localhost:8080/#/")
 public class SOAPEPage extends PageObject {
+	
+	private WebElement subjectiveTab = find(By.id("subjective_tab"));
+	private WebElement objectiveTab  = find(By.id("objective_tab"));
+	private WebElement analysisTab   = find(By.id("analysis_tab"));
+	private WebElement planTab       = find(By.id("plan_tab"));
+	private WebElement evolutionTab  = find(By.id("evolution_tab"));
+	
 
 	public List<String> getSOAPELink(String patient) {
 		WebElementFacade lnk = find(By.partialLinkText(patient));
@@ -46,7 +53,32 @@ public class SOAPEPage extends PageObject {
 		actionButton.click();
 	}
 
-	// TODO
+	
+	public void assertTab(String tab){
+		
+		switch (tab) {
+			case "SUBJETIVO":
+				subjectiveTab.findElement(By.tagName("a")).click();
+				break;
+				
+			case "OBJETIVO":
+				objectiveTab.findElement(By.tagName("a")).click();
+				break;
+				
+			case "ANALISE":
+				analysisTab.findElement(By.tagName("a")).click();
+				break;
+				
+			case "PLANO":
+				planTab.findElement(By.tagName("a")).click();
+				break;
+				
+			case "EVOLUCAO":
+				evolutionTab.findElement(By.tagName("a")).click();
+				break;
+		}
+	}
+	
 
 	public String getPatientNameFromHeader() {
 		WebElement name = find(By.id("patient_name"));
