@@ -14,9 +14,15 @@ public class M2F9US1DefinitionSteps {
 	@Steps
 	IncludeEvaluationSteps includeEvaluationSteps;
 	
-	@Given("'$user' is on the Evaluation page")
-	public void givenTheUserIsOnTheEvaluationPage(@Named("user") String user) {
-		includeEvaluationSteps.is_on_the_evaluation_page();
+	@Given("'$user' is on the Consultation page of <patient>")
+	public void givenTheUserIsOnTheConsultationPage(@Named("user") String user, 
+			@Named("patient") String patient) {
+		includeEvaluationSteps.is_on_the_consultation_page(patient);
+	}
+	
+	@Given("'$user' is on the Evaluation tab")
+	public void givenTheUserIsOnTheEvaluationTab(@Named("user") String user) {
+		includeEvaluationSteps.is_on_the_evaluation_tab();
 	}
 	
 	@When("<disease>, <type> and <comment> are given")
