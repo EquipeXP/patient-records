@@ -12,29 +12,29 @@
                             <div class="row">
                                 <div class="col-lg-4" >
                                     <label>Nome: </label>
-                                    <span id="patient_name">{{patient.name}}</span>
+                                    <span id="patient_name">{{patient.name || 'Não informado'}}</span>
                                 </div>
                                 <div class="col-lg-4">
                                     <label>Gênero adminitrativo: </label>
-                                    <span id="patient_genderAdm">{{patient.genderAdm}}</span>
+                                    <span id="patient_genderAdm">{{gendersAdm[patient.genderAdm] || 'Não informado'}}</span>
                                 </div>
                                 <div class="col-lg-4">
                                     <label>Data/hora de nascimento: </label>
-                                    <span id="patient_birthDate">{{patient.birthDate}}</span>
+                                    <span id="patient_birthDate">{{patient.birthDate ? (patient.birthDate  | date: 'dd/MM/yyyy - HH:mm') : 'Não informado'}}</span>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-4">
                                     <label>Estado civil: </label>
-                                    <span id="patient_maritalStatus">{{patient.maritalStatus}}</span>
+                                    <span id="patient_maritalStatus">{{patient.maritalStatus || 'Não informado'}}</span>
                                 </div>
                                 <div class="col-lg-4">
                                     <label>Raça: </label>
-                                    <span id="patient_breed">{{patient.breed}}</span>
+                                    <span id="patient_breed">{{patient.breed || 'Não informado'}}</span>
                                 </div>
                                 <div class="col-lg-4">
                                     <label>Etnia: </label>
-                                    <span id="patient_ethnicGroup">{{patient.ethnicGroup}}</span>
+                                    <span id="patient_ethnicGroup">{{patient.ethnicGroup || 'Não informado'}}</span>
                                 </div>
                             </div>
                         </div>
@@ -56,7 +56,7 @@
                                         <uib-tab id="main_objective_tab" heading="Objectivo">
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    
+
                                                 </div>
                                             </div>
                                         </uib-tab>

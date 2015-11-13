@@ -10,6 +10,10 @@
 
                 return $http.get(BASE_API_ADDRESS + 'patient');
             },
+            getById: function(id)  {
+
+                return $http.get(BASE_API_ADDRESS + 'patient/' + id);
+            },
             addPatient: function(patient) {
 
                 return $http.post(BASE_API_ADDRESS + 'patient', patient);
