@@ -3,32 +3,39 @@ package com.unicamp.serenityTests.steps;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 import com.unicamp.serenityTests.pages.EvaluateDiseasePage;
+import com.unicamp.serenityTests.pages.SOAPEPage;
 
 import net.thucydides.core.annotations.Step;
 
 public class IncludeEvaluationSteps {
 	private static final long serialVersionUID = 1L;
 	
-	EvaluateDiseasePage evaluateDiseasePage;
+	SOAPEPage soapePage;
 	
 	@Step
-	public void is_on_the_evaluation_page() {
-		evaluateDiseasePage.open();
+	public void is_on_the_consultation_page(String patientId) {
+		soapePage.open();
+		soapePage.enterConsultationPage(patientId);
+	}
+	
+	@Step
+	public void is_on_the_evaluation_tab() {
+		soapePage.assertTab("ANALISE");
 	}
 	
 	@Step
 	public void insertDisease(String disease) {
-		evaluateDiseasePage.typeDisease(disease);
+		soapePage.typeDisease(disease);
 	}
 	
 	@Step
 	public void insertType(String type) {
-		evaluateDiseasePage.chooseType(type);
+		soapePage.chooseType(type);
 	}
 	
 	@Step
 	public void insertComment(String comment) {
-		evaluateDiseasePage.typeComment(comment);
+		soapePage.typeComment(comment);
 	}
 	
 	@Step
@@ -40,12 +47,12 @@ public class IncludeEvaluationSteps {
 	
 	@Step
 	public void saveForm() {
-		this.evaluateDiseasePage.clickOnSave();
+		this.soapePage.clickOnSave();
 	}
 	
 	@Step
 	public void cancelForm() {
-		this.evaluateDiseasePage.clickOnCancel();
+		this.soapePage.clickOnCancel();
 	}
 
 	@Step
@@ -56,7 +63,7 @@ public class IncludeEvaluationSteps {
 	
 	@Step
 	public void shoudlSeeMessage(String message) {
-		assertThat("Message was on screen", evaluateDiseasePage.getMessage().equals(message));
+		assertThat("Message was on screen", soapePage.getMessage().equals(message));
 	}
 
 }

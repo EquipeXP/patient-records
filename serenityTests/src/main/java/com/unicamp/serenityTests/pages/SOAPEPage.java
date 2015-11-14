@@ -17,6 +17,13 @@ import org.openqa.selenium.WebElement;
 
 @DefaultUrl("http://localhost:8080/#/")
 public class SOAPEPage extends PageObject {
+	
+	private WebElement subjectiveTab = find(By.id("subjective_tab"));
+	private WebElement objectiveTab  = find(By.id("objective_tab"));
+	private WebElement analysisTab   = find(By.id("analysis_tab"));
+	private WebElement planTab       = find(By.id("plan_tab"));
+	private WebElement evolutionTab  = find(By.id("evolution_tab"));
+	
 
 	public List<String> getSOAPELink(String patient) {
 		WebElementFacade lnk = find(By.partialLinkText(patient));
@@ -46,7 +53,32 @@ public class SOAPEPage extends PageObject {
 		actionButton.click();
 	}
 
-	// TODO
+	
+	public void assertTab(String tab){
+		
+		switch (tab) {
+			case "SUBJETIVO":
+				subjectiveTab.findElement(By.tagName("a")).click();
+				break;
+				
+			case "OBJETIVO":
+				objectiveTab.findElement(By.tagName("a")).click();
+				break;
+				
+			case "ANALISE":
+				analysisTab.findElement(By.tagName("a")).click();
+				break;
+				
+			case "PLANO":
+				planTab.findElement(By.tagName("a")).click();
+				break;
+				
+			case "EVOLUCAO":
+				evolutionTab.findElement(By.tagName("a")).click();
+				break;
+		}
+	}
+	
 
 	public String getPatientNameFromHeader() {
 		WebElement name = find(By.id("patient_name"));
@@ -95,5 +127,50 @@ public class SOAPEPage extends PageObject {
 		WebElement saveButton = find(By.id("saveButton"));
 		saveButton.click();
 	}
+
+	/* ---------------------------------------------------------------------- */
+	/* EVALUATION TAB ------------------------------------------------------- */
+	/* ---------------------------------------------------------------------- */
+	public void typeDisease(String disease) {
+		WebElementFacade value = find(By.id("diseaseName"));
+		value.type(disease);
+	}
+	
+	public void typeComment(String comment) {
+		WebElementFacade value = find(By.id("comment"));
+		value.type(comment);		
+	}
+
+	public void chooseType(String type) {
+		WebElement select = find(By.id("diagnosesType"));
+		List<WebElement> options = select.findElements(By.tagName("options"));
+		for (WebElement option : options) {
+			if (option.getText().equals(type)) {
+				option.click();
+				break;
+			}
+		}
+	}
+
+	public void clickOnSave() {
+    	WebElement saveButton = find(By.id("saveButton"));
+    	saveButton.click();
+	}
+	
+    public void clickOnCancel() {
+    	WebElement cancelButton = find(By.id("cancelButton"));
+    	cancelButton.click();
+    }
+
+    public String getMessage() {
+    	try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+    	
+    	WebElementFacade alertMessage = find(By.cssSelector(".alert-container .alert span.ng-binding.ng-scope"));
+    	return alertMessage.getText();
+    }
 
 }

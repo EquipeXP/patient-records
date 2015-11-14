@@ -52,32 +52,149 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </uib-tab>
-                                        <uib-tab id="objective_tab" heading="Objectivo">
                                             <div class="row">
                                                 <div class="col-lg-12">
-
+                                                    <div class="form-group">
+                                                        <label>Comentários</label>
+                                                        <textarea id="subjective_comments" class="form-control"
+                                                                  rows="6" style="resize: none"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </uib-tab>
+                                        <uib-tab id="objective_tab" heading="Objetivo">
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <div class="form-group">
+                                                        <label>Altura</label>
+                                                        <input class="form-control" type="text" id="objective_height" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div class="form-group">
+                                                        <label>Peso</label>
+                                                        <input class="form-control" type="text" id="objective_weight" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div class="form-group">
+                                                        <label>Temperatura</label>
+                                                        <input class="form-control" type="text" id="objective_temperature" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <label>Pressão arterial</label>
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-lg-4">
+                                                                <input class="form-control" type="text" id="objective_pressure_1" />
+                                                            </div>
+                                                            <div class="col-lg-4">
+                                                                <input class="form-control" type="text" id="objective_pressure_2" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label>Frequência cardíaca</label>
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="text" id="objective_heart_rate" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label>Glicemia capilar</label>
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="text" id="objective_glycemic_level" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <label>Frequência respiratória</label>
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="text" id="objective_respiratory_rate" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label>Saturação de oxigênio</label>
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="text" id="objective_oxigen_level" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label>Saturação de Dióxido de Carbono</label>
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="text" id="objective_carbon_dioxide_level" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <label>Comentários</label>
+                                                        <textarea id="objective_comments" class="form-control"
+                                                                  rows="6" style="resize: none"></textarea>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </uib-tab>
                                         <uib-tab id="analysis_tab" heading="Avaliação">
                                             <div class="row">
                                                 <div class="col-lg-12">
-
+                                                    <label>Diagnóstico (CID10)</label>
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="text" id="analysis_diagnostic" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <label>Tipo</label>
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="text" id="analysis_type" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <label>Comentários</label>
+                                                        <textarea id="analysis_comments" class="form-control"
+                                                                  rows="6" style="resize: none"></textarea>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </uib-tab>
                                         <uib-tab id="plan_tab" heading="Plano">
                                             <div class="row">
                                                 <div class="col-lg-12">
-
+                                                    <div class="form-group">
+                                                        <label>Conduta</label>
+                                                        <textarea id="plan_conduct" class="form-control"
+                                                                  rows="6" style="resize: none"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <label>Comentários</label>
+                                                        <textarea id="plan_comments" class="form-control"
+                                                                  rows="6" style="resize: none"></textarea>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </uib-tab>
                                         <uib-tab id="evolution_tab" heading="Evolução">
                                             <div class="row">
                                                 <div class="col-lg-12">
-
+                                                    <div class="form-group">
+                                                        <label>Evolução</label>
+                                                        <textarea id="evolution" class="form-control"
+                                                                  rows="10" style="resize: none"></textarea>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </uib-tab>
