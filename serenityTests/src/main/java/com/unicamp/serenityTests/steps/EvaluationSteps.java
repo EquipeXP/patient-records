@@ -2,12 +2,11 @@ package com.unicamp.serenityTests.steps;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 
-import com.unicamp.serenityTests.pages.EvaluateDiseasePage;
 import com.unicamp.serenityTests.pages.SOAPEPage;
 
 import net.thucydides.core.annotations.Step;
 
-public class IncludeEvaluationSteps {
+public class EvaluationSteps {
 	private static final long serialVersionUID = 1L;
 	
 	SOAPEPage soapePage;

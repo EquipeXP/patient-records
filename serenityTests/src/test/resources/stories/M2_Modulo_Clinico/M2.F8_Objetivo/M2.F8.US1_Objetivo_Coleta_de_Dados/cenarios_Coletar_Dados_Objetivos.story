@@ -1,17 +1,12 @@
 Scenario: Input Objective Data
-Given user is at objective data tab
-When user insert a <objective> description
-Then objective data should have <objective>
+Given user is at objective data tab of <patient>
+When user insert <height>, <weight>, <temperature>, <systolic>, <diastolic>, <bpm>, <rpm>, <so>, <sco>, <glycemia>
+Then user should see <message>
 
 Examples
 
-| objective |
-| Height = 1.92m, Weight = 134.0Kg, Arterial pressure = 162mm Hg (systolic)/ 107 mm Hg (Diastolic), Heart Rate = 142BPM  |
-
-Examples
-
-| message |
-| objective inserted |
+|patient	|height		|weight		|temperature		|systolic		|diastolic		|bpm		|fr		|so		|sco		|glycemia	|message
+|1 			|1.92m		|134.0Kg	|35 C				|162mmHg 		|107mmHg		|142		|20		|250	|250		|70mg/DL 	| objective inserted
 
 Scenario: Input Objective Data
 Given user is at objective data tab

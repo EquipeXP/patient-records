@@ -5,24 +5,24 @@ import org.jbehave.core.annotations.Named;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 
-import com.unicamp.serenityTests.steps.IncludeEvaluationSteps;
+import com.unicamp.serenityTests.steps.EvaluationSteps;
 
 import net.thucydides.core.annotations.Steps;
 
 public class M2F9US1DefinitionSteps {
 	
 	@Steps
-	IncludeEvaluationSteps includeEvaluationSteps;
+	EvaluationSteps evaluationSteps;
 	
 	@Given("'$user' is on the Consultation page of <patient>")
 	public void givenTheUserIsOnTheConsultationPage(@Named("user") String user, 
 			@Named("patient") String patient) {
-		includeEvaluationSteps.is_on_the_consultation_page(patient);
+		evaluationSteps.is_on_the_consultation_page(patient);
 	}
 	
 	@Given("'$user' is on the Evaluation tab")
 	public void givenTheUserIsOnTheEvaluationTab(@Named("user") String user) {
-		includeEvaluationSteps.is_on_the_evaluation_tab();
+		evaluationSteps.is_on_the_evaluation_tab();
 	}
 	
 	@When("<disease>, <type> and <comment> are given")
@@ -30,21 +30,21 @@ public class M2F9US1DefinitionSteps {
 			@Named("type") String type,
 			@Named("comment") String comment) {
 		
-		includeEvaluationSteps.fillForm(disease, type, comment);
-		includeEvaluationSteps.saveForm();
+		evaluationSteps.fillForm(disease, type, comment);
+		evaluationSteps.saveForm();
 	}
 			
     @When("no <disease>, <type> or <comment> are given")
     public void whenSomeEvaluationDataInputIsMissing(@Named("disease") String disease,
     		@Named("type") String type,
     		@Named("comment") String comment) {
-    	includeEvaluationSteps.fillFormMissingData(disease, type, comment);
-    	includeEvaluationSteps.saveForm();
+    	evaluationSteps.fillFormMissingData(disease, type, comment);
+    	evaluationSteps.saveForm();
     }
 	
 	@Then("An $alert should appear")
 	public void thenAnAlertShouldAppear(String alert){
-		includeEvaluationSteps.shoudlSeeMessage(alert);
+		evaluationSteps.shoudlSeeMessage(alert);
 	}
 	
 
