@@ -1,8 +1,12 @@
 Scenario: Fill SOAP
 Given 'Manoel de Abreu' is on the patient <id> consultation page
-When 'Manoel de Abreu' fill SOAP with <complaint>
+When 'Manoel de Abreu' fill complaint with <complaint>
+And 'Manoel de Abreu' fill objective with <height>, <weight>, <temperature>, <bloodPressure>, <cardiacFrequency>, <cgb>, <respiratoryFrequency>, <oxygenSaturation> and <carbonDioxSaturation>
+And 'Manoel de Abreu' fill evaluation with <diagnostic> and <type>
+And 'Manoel de Abreu' fill plan with <conduct>
+And 'Manoel de Abreu' fill evolution with <evolution>
 Then 'Manoel de Abreu' should see <message>
 
 Examples:
-|id|complaint|message|
-|9 | My head hurts|ok|
+|id|complaint|message| height | weight | temperature | bloodPressure | cardiacFrequency | cgb | respiratoryFrequency | oxygenSaturation | carbonDioxSaturation |
+|9 | My head hurts|ok| 1.90	  | 95     | 30          | 16 12         | 130              | 10  | 4                    | 20               | 30                   |

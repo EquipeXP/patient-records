@@ -39,14 +39,37 @@ public class M2F4US7DEfinitionSteps {
 		startSOAPESteps.doesNotFillComplaiant();
 	}
 
-	@When("'$user' fill SOAP with <complaint>")
-	public void whenUserFillSOAPWith(String complaint) {
-		startSOAPESteps.fillSOAPWith(complaint);
+	@When("'$user' fill complaint with <complaint>")
+	public void whenUserFillComplaintWith(String complaint) {
+		startSOAPESteps.fillComplaintWith(complaint);
+	}
+
+	@When("'$user' fill objective with <height>, <weight>, <temperature>, <bloodPressure>, <cardiacFrequency>, <cgb>, <respiratoryFrequency>, <oxygenSaturation> and <carbonDioxSaturation>")
+	public void whenUserFillObjectiveWith(String height, String weight, String temperature, String bloodPressure,
+			String cardiacFrequency, String cgb, String respiratoryFrequency, String oxygenSaturation,
+			String carbonDioxSaturation) {
+		startSOAPESteps.fillObjectiveWith(height, weight, temperature, bloodPressure, cardiacFrequency, cgb,
+				respiratoryFrequency, oxygenSaturation, carbonDioxSaturation);
+	}
+
+	@When("'$user' fill evaluation with <diagnostic> and <type>")
+	void whenUserFillEvaluationWith(String diagnostic, String type) {
+		startSOAPESteps.fillEvaluationWith(diagnostic, type);
+	}
+
+	@When("'$user' fill plan with <conduct>")
+	void whenUserFillPlanWith(String conduct) {
+		startSOAPESteps.fillPlanWith(conduct);
+	}
+	
+	@When("'$user' fill evolution with <evolution>")
+	void whenUserFillEvolutionWith(String evolution) {
+		startSOAPESteps.fillEvolutionWith(evolution);
 	}
 
 	@Then("'$user' should see <message>")
 	public void thenUserShouldSeeMessage(String message) {
-		assert(true);
+		assert (true);
 	}
 
 }

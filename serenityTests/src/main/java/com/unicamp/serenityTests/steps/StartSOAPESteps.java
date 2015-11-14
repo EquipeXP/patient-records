@@ -66,16 +66,32 @@ public class StartSOAPESteps extends ScenarioSteps {
 		assertThat("Patient gender is on screen", SOAPEPg.getPatientGenderFromHeader().equals(gender));
 		assertThat("Patient marital status is on screen", SOAPEPg.getPatientMaritalStatusFromHeader().equals(maritalStatus));	
 	}
-
-	@Step
-	public void fillSOAPWith(String complaint) {
-		// TODO Auto-generated method stub
-		fillComplaint(complaint);
-		SOAPEPg.saveSOAP();
-	}
 	
-	public void fillComplaint(String complaint) {
+	@Step
+	public void fillComplaintWith(String complaint) {
 		SOAPEPg.fillComplaint(complaint);
+	}
+
+	public void fillObjectiveWith(String height, String weight, String temperature, String bloodPressure,
+			String cardiacFrequency, String cgb, String respiratoryFrequency, String oxygenSaturation,
+			String carbonDioxSaturation) {
+		SOAPEPg.fillObjectiveWith(height, weight, temperature, bloodPressure, cardiacFrequency, cgb, respiratoryFrequency, oxygenSaturation, carbonDioxSaturation);
+		
+	}
+
+	public void fillEvaluationWith(String diagnostic, String type) {
+		SOAPEPg.fillEvaluationWith(diagnostic, type);
+		
+	}
+
+	public void fillPlanWith(String conduct) {
+		SOAPEPg.fillPlanWith(conduct);
+		
+	}
+
+	public void fillEvolutionWith(String evolution) {
+		SOAPEPg.fillEvolutionWith(evolution);
+		
 	}
 
 }

@@ -17,13 +17,12 @@ import org.openqa.selenium.WebElement;
 
 @DefaultUrl("http://localhost:8080/#/")
 public class SOAPEPage extends PageObject {
-	
+
 	private WebElement subjectiveTab = find(By.id("subjective_tab"));
-	private WebElement objectiveTab  = find(By.id("objective_tab"));
-	private WebElement analysisTab   = find(By.id("analysis_tab"));
-	private WebElement planTab       = find(By.id("plan_tab"));
-	private WebElement evolutionTab  = find(By.id("evolution_tab"));
-	
+	private WebElement objectiveTab = find(By.id("objective_tab"));
+	private WebElement analysisTab = find(By.id("analysis_tab"));
+	private WebElement planTab = find(By.id("plan_tab"));
+	private WebElement evolutionTab = find(By.id("evolution_tab"));
 
 	public List<String> getSOAPELink(String patient) {
 		WebElementFacade lnk = find(By.partialLinkText(patient));
@@ -53,32 +52,30 @@ public class SOAPEPage extends PageObject {
 		actionButton.click();
 	}
 
-	
-	public void assertTab(String tab){
-		
+	public void assertTab(String tab) {
+
 		switch (tab) {
-			case "SUBJETIVO":
-				subjectiveTab.findElement(By.tagName("a")).click();
-				break;
-				
-			case "OBJETIVO":
-				objectiveTab.findElement(By.tagName("a")).click();
-				break;
-				
-			case "ANALISE":
-				analysisTab.findElement(By.tagName("a")).click();
-				break;
-				
-			case "PLANO":
-				planTab.findElement(By.tagName("a")).click();
-				break;
-				
-			case "EVOLUCAO":
-				evolutionTab.findElement(By.tagName("a")).click();
-				break;
+		case "SUBJETIVO":
+			subjectiveTab.findElement(By.tagName("a")).click();
+			break;
+
+		case "OBJETIVO":
+			objectiveTab.findElement(By.tagName("a")).click();
+			break;
+
+		case "ANALISE":
+			analysisTab.findElement(By.tagName("a")).click();
+			break;
+
+		case "PLANO":
+			planTab.findElement(By.tagName("a")).click();
+			break;
+
+		case "EVOLUCAO":
+			evolutionTab.findElement(By.tagName("a")).click();
+			break;
 		}
 	}
-	
 
 	public String getPatientNameFromHeader() {
 		WebElement name = find(By.id("patient_name"));
@@ -120,9 +117,9 @@ public class SOAPEPage extends PageObject {
 		WebElement complaintTab = find(By.id("subjective_tab"));
 		complaintTab.click();
 		WebElement complaintTextArea = find(By.id("main_complaint"));
-		complaintTextArea.sendKeys(complaint);		
+		complaintTextArea.sendKeys(complaint);
 	}
-	
+
 	public void saveSOAP() {
 		WebElement saveButton = find(By.id("saveButton"));
 		saveButton.click();
@@ -135,10 +132,10 @@ public class SOAPEPage extends PageObject {
 		WebElementFacade value = find(By.id("diseaseName"));
 		value.type(disease);
 	}
-	
+
 	public void typeComment(String comment) {
 		WebElementFacade value = find(By.id("comment"));
-		value.type(comment);		
+		value.type(comment);
 	}
 
 	public void chooseType(String type) {
@@ -153,24 +150,88 @@ public class SOAPEPage extends PageObject {
 	}
 
 	public void clickOnSave() {
-    	WebElement saveButton = find(By.id("saveButton"));
-    	saveButton.click();
+		WebElement saveButton = find(By.id("saveButton"));
+		saveButton.click();
 	}
-	
-    public void clickOnCancel() {
-    	WebElement cancelButton = find(By.id("cancelButton"));
-    	cancelButton.click();
-    }
 
-    public String getMessage() {
-    	try {
+	public void clickOnCancel() {
+		WebElement cancelButton = find(By.id("cancelButton"));
+		cancelButton.click();
+	}
+
+	public String getMessage() {
+		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-    	
-    	WebElementFacade alertMessage = find(By.cssSelector(".alert-container .alert span.ng-binding.ng-scope"));
-    	return alertMessage.getText();
-    }
+
+		WebElementFacade alertMessage = find(By.cssSelector(".alert-container .alert span.ng-binding.ng-scope"));
+		return alertMessage.getText();
+	}
+
+	public void fillObjectiveWith(String height, String weight, String temperature, String bloodPressure,
+			String cardiacFrequency, String cgb, String respiratoryFrequency, String oxygenSaturation,
+			String carbonDioxSaturation) {
+		WebElement complaintTab = find(By.id("objective_tab"));
+		complaintTab.click();
+
+		WebElement heightField = find(By.id("objective_height"));
+		heightField.sendKeys(height);
+
+		WebElement weightField = find(By.id("objective_weight"));
+		weightField.sendKeys(weight);
+
+		WebElement temperatureField = find(By.id("objective_temperature"));
+		temperatureField.sendKeys(temperature);
+
+		WebElement bloodPressureField1 = find(By.id("objective_pressure_1"));
+		bloodPressureField1.sendKeys(bloodPressure.split(" ")[0]);
+
+		WebElement bloodPressureField2 = find(By.id("objective_pressure_2"));
+		bloodPressureField2.sendKeys(bloodPressure.split(" ")[1]);
+
+		WebElement cardiacFrequencyField = find(By.id("objective_heart_rate"));
+		cardiacFrequencyField.sendKeys(cardiacFrequency);
+
+		WebElement cgbField = find(By.id("objective_glycemic_level"));
+		cgbField.sendKeys(cgb);
+
+		WebElement respiratoryFrequencyField = find(By.id("objective_respiratory_rate"));
+		respiratoryFrequencyField.sendKeys(respiratoryFrequency);
+
+		WebElement oxygenSaturationField = find(By.id("objective_oxigen_level"));
+		oxygenSaturationField.sendKeys(oxygenSaturation);
+
+		WebElement carbonDioxSaturationField = find(By.id("objective_carbon_dioxide_level"));
+		carbonDioxSaturationField.sendKeys(carbonDioxSaturation);
+
+	}
+
+	public void fillEvaluationWith(String diagnostic, String type) {
+		WebElement complaintTab = find(By.id("analysis_tab"));
+		complaintTab.click();
+
+		// WebElement heightField = find(By.id("objective_height"));
+		// heightField.sendKeys(height);
+
+	}
+
+	public void fillPlanWith(String conduct) {
+		WebElement complaintTab = find(By.id("plan_tab"));
+		complaintTab.click();
+
+		WebElement conductField = find(By.id("plan_conduct"));
+		conductField.sendKeys(conduct);
+	}
+
+	public void fillEvolutionWith(String evolution) {
+		WebElement complaintTab = find(By.id("evolution_tab"));
+		complaintTab.click();
+
+		WebElement evolutionField = find(By.id("evolution"));
+		evolutionField.sendKeys(evolution);
+		
+	}
 
 }

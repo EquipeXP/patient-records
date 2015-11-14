@@ -15,7 +15,7 @@ public class M2F1US1DefinitionSteps {
 	StartSOAPESteps steps;
 
 	@Given("'$user' is on the patient <id> consultation page")
-	public void givenTheUserIsOnPatientConsultationPage_X(Integer id) {
+	public void givenTheUserIsOnPatientConsultationPage(Integer id) {
 
 		steps.isOnUserConsultationPage(id);
 	}
