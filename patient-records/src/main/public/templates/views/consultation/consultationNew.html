@@ -48,7 +48,8 @@
                                                     <div class="form-group">
                                                         <label>Anamnese</label>
                                                         <textarea id="main_complaint" class="form-control"
-                                                                rows="6" style="resize: none"></textarea>
+                                                                rows="6" style="resize: none"
+                                                                ng-model="consultation.mainComplaint"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -57,7 +58,8 @@
                                                     <div class="form-group">
                                                         <label>Comentários</label>
                                                         <textarea id="subjective_comments" class="form-control"
-                                                                  rows="6" style="resize: none"></textarea>
+                                                                  rows="6" style="resize: none"
+                                                                  ng-model="consultation.subjectiveComments"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -67,19 +69,22 @@
                                                 <div class="col-lg-4">
                                                     <div class="form-group">
                                                         <label>Altura</label>
-                                                        <input class="form-control" type="text" id="objective_height" />
+                                                        <input class="form-control" type="text" id="objective_height"
+                                                               ng-model="consultation.height"/>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4">
                                                     <div class="form-group">
                                                         <label>Peso</label>
-                                                        <input class="form-control" type="text" id="objective_weight" />
+                                                        <input class="form-control" type="text" id="objective_weight"
+                                                               ng-model="consultation.weight"/>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4">
                                                     <div class="form-group">
                                                         <label>Temperatura</label>
-                                                        <input class="form-control" type="text" id="objective_temperature" />
+                                                        <input class="form-control" type="text" id="objective_temperature"
+                                                               ng-model="consultation.temperature"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -89,10 +94,12 @@
                                                     <div class="form-group">
                                                         <div class="row">
                                                             <div class="col-lg-4">
-                                                                <input class="form-control" type="text" id="objective_pressure_1" />
+                                                                <input class="form-control" type="text" id="objective_pressure_1"
+                                                                       ng-model="consultation.diastolicPressure" />
                                                             </div>
                                                             <div class="col-lg-4">
-                                                                <input class="form-control" type="text" id="objective_pressure_2" />
+                                                                <input class="form-control" type="text" id="objective_pressure_2"
+                                                                       ng-model="consultation.systolicPressure"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -100,13 +107,15 @@
                                                 <div class="col-lg-4">
                                                     <label>Frequência cardíaca</label>
                                                     <div class="form-group">
-                                                        <input class="form-control" type="text" id="objective_heart_rate" />
+                                                        <input class="form-control" type="text" id="objective_heart_rate"
+                                                               ng-model="consultation.heartRate"/>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4">
                                                     <label>Glicemia capilar</label>
                                                     <div class="form-group">
-                                                        <input class="form-control" type="text" id="objective_glycemic_level" />
+                                                        <input class="form-control" type="text" id="objective_glycemic_level"
+                                                               ng-model="consultation.glycemicLevel"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -114,19 +123,22 @@
                                                 <div class="col-lg-4">
                                                     <label>Frequência respiratória</label>
                                                     <div class="form-group">
-                                                        <input class="form-control" type="text" id="objective_respiratory_rate" />
+                                                        <input class="form-control" type="text" id="objective_respiratory_rate"
+                                                               ng-model="consultation.respiratoryRate"/>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4">
                                                     <label>Saturação de oxigênio</label>
                                                     <div class="form-group">
-                                                        <input class="form-control" type="text" id="objective_oxigen_level" />
+                                                        <input class="form-control" type="text" id="objective_oxigen_level"
+                                                               ng-model="consultation.oxigenLevel"/>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4">
                                                     <label>Saturação de Dióxido de Carbono</label>
                                                     <div class="form-group">
-                                                        <input class="form-control" type="text" id="objective_carbon_dioxide_level" />
+                                                        <input class="form-control" type="text" id="objective_carbon_dioxide_level"
+                                                               ng-model="consultation.carbonDioxideLevel"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -135,7 +147,8 @@
                                                     <div class="form-group">
                                                         <label>Comentários</label>
                                                         <textarea id="objective_comments" class="form-control"
-                                                                  rows="6" style="resize: none"></textarea>
+                                                                  rows="6" style="resize: none"
+                                                                  ng-model="consultation.objectiveComments"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -170,7 +183,8 @@
                                                     <div class="form-group">
                                                         <label>Comentários</label>
                                                         <textarea id="analysis_comments" class="form-control"
-                                                                  rows="6" style="resize: none"></textarea>
+                                                                  rows="6" style="resize: none"
+                                                                  ng-model="consultation.analysisComments"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -181,7 +195,8 @@
                                                     <div class="form-group">
                                                         <label>Conduta</label>
                                                         <textarea id="plan_conduct" class="form-control"
-                                                                  rows="6" style="resize: none"></textarea>
+                                                                  rows="6" style="resize: none"
+                                                                  ng-model="consultation.conduct"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -190,7 +205,8 @@
                                                     <div class="form-group">
                                                         <label>Comentários</label>
                                                         <textarea id="plan_comments" class="form-control"
-                                                                  rows="6" style="resize: none"></textarea>
+                                                                  rows="6" style="resize: none"
+                                                                  ng-model="consultation.planComments"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -201,7 +217,8 @@
                                                     <div class="form-group">
                                                         <label>Evolução</label>
                                                         <textarea id="evolution" class="form-control"
-                                                                  rows="10" style="resize: none"></textarea>
+                                                                  rows="10" style="resize: none"
+                                                                  ng-model="consultation.evolution"></textarea>
                                                     </div>
                                                 </div>
                                             </div>

@@ -111,6 +111,59 @@ public class SOAPEPage extends PageObject {
 		// TODO Auto-generated method stub
 
 	}
+	
+	/* ---------------------------------------------------------------------- */
+	/* OBJECTIVE TAB -------------------------------------------------------- */
+	/* ---------------------------------------------------------------------- */
+	public void typeGlycemia(String glycemia) {
+		WebElementFacade value = find(By.id("objective_glycemic_level"));
+		value.type(glycemia);
+	}
+
+	public void typeSco(String sco) {
+		WebElementFacade value = find(By.id("objective_carbon_dioxide_level"));
+		value.type(sco);
+	}
+
+	public void typeSo(String so) {
+		WebElementFacade value = find(By.id("objective_oxigen_level"));
+		value.type(so);
+	}
+
+	public void typeFr(String fr) {
+		WebElementFacade value = find(By.id("objective_respiratory_rate"));
+		value.type(fr);
+	}
+
+	public void typeBpm(String bpm) {
+		WebElementFacade value = find(By.id("objective_heart_rate"));
+		value.type(bpm);
+	}
+
+	public void typeDiastolic(String diastolic) {
+		WebElementFacade value = find(By.id("objective_pressure_2"));
+		value.type(diastolic);
+	}
+
+	public void typeSystolic(String systolic) {
+		WebElementFacade value = find(By.id("objective_pressure_1"));
+		value.type(systolic);
+	}
+
+	public void typeTemperature(String temperature) {
+		WebElementFacade value = find(By.id("objective_temperature"));
+		value.type(temperature);
+	}
+
+	public void typeWeight(String weight) {
+		WebElementFacade value = find(By.id("objective_weight"));
+		value.type(weight);
+	}
+
+	public void typeHeight(String height) {
+		WebElementFacade value = find(By.id("objective_height"));
+		value.type(height);
+	}
 
 	public void fillComplaint(String complaint) {
 		// TODO Auto-generated method stub
@@ -129,17 +182,23 @@ public class SOAPEPage extends PageObject {
 	/* EVALUATION TAB ------------------------------------------------------- */
 	/* ---------------------------------------------------------------------- */
 	public void typeDisease(String disease) {
-		WebElementFacade value = find(By.id("diseaseName"));
-		value.type(disease);
+		WebElement select = find(By.id("analysis_diagnostic"));
+		List<WebElement> options = select.findElements(By.tagName("options"));
+		for (WebElement option : options) {
+			if (option.getText().equals(disease)) {
+				option.click();
+				break;
+			}
+		}
 	}
 
 	public void typeComment(String comment) {
-		WebElementFacade value = find(By.id("comment"));
-		value.type(comment);
+		WebElementFacade value = find(By.id("analysis_comment"));
+		value.type(comment);		
 	}
 
 	public void chooseType(String type) {
-		WebElement select = find(By.id("diagnosesType"));
+		WebElement select = find(By.id("analysis_type"));
 		List<WebElement> options = select.findElements(By.tagName("options"));
 		for (WebElement option : options) {
 			if (option.getText().equals(type)) {
