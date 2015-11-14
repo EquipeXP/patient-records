@@ -2,6 +2,7 @@ package com.unicamp.server;
 
 import java.util.Properties;
 
+import com.unicamp.entity.Consultation;
 import org.glassfish.hk2.api.Factory;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -25,7 +26,8 @@ public class SessionFactoryFactory implements Factory<SessionFactory> {
 		Configuration configuration = new Configuration()
 				.addPackage("com.unicamp.entity")
 				.addProperties(prop)
-				.addAnnotatedClass(Patient.class);						
+				.addAnnotatedClass(Patient.class)
+				.addAnnotatedClass(Consultation.class);
 		
         StandardServiceRegistryBuilder srBuilder = new StandardServiceRegistryBuilder();
         srBuilder.applySettings(configuration.getProperties());

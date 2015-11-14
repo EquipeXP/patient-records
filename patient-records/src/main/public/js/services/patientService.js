@@ -17,6 +17,10 @@
             addPatient: function(patient) {
 
                 return $http.post(BASE_API_ADDRESS + 'patient', patient);
+            },
+            addConsultation: function(patientId, consultation) {
+
+                return $http.post(BASE_API_ADDRESS + 'patient/' + patientId + '/consultation', consultation);
             }
         }
 	}

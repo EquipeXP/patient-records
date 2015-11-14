@@ -1,5 +1,7 @@
 package com.unicamp.server;
 
+import com.unicamp.repository.ConsultationRepository;
+import com.unicamp.repository.IConsultationRepository;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.grizzly.http.server.StaticHttpHandler;
 import org.glassfish.hk2.utilities.binding.AbstractBinder;
@@ -65,6 +67,7 @@ public class Main {
         protected void configure() {
             
         	bind(PatientRepository.class).to(IPatientRepository.class).in(RequestScoped.class);
+        	bind(ConsultationRepository.class).to(IConsultationRepository.class).in(RequestScoped.class);
         	bindFactory(SessionFactoryFactory.class).to(SessionFactory.class).in(Singleton.class);
 		    bindFactory(SFFactory.class).to(Session.class).in(RequestScoped.class);
     	}
