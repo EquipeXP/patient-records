@@ -145,7 +145,11 @@
                                                 <div class="col-lg-12">
                                                     <label>Diagnóstico (CID10)</label>
                                                     <div class="form-group">
-                                                        <input class="form-control" type="text" id="analysis_diagnostic" />
+                                                        <select id="analysis_diagnostic" class="form-control"
+                                                                ng-options="type.value as type.description for type in types.analysisDiagnostic"
+                                                                ng-model="consultation.analysisDiagnostic">
+                                                            <option value="">--</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
@@ -153,7 +157,11 @@
                                                 <div class="col-lg-6">
                                                     <label>Tipo</label>
                                                     <div class="form-group">
-                                                        <input class="form-control" type="text" id="analysis_type" />
+                                                        <select id="analysis_type" class="form-control"
+                                                                ng-options="type.value as type.description for type in types.analysisType"
+                                                                ng-model="consultation.analysisType">
+                                                            <option value="">--</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
