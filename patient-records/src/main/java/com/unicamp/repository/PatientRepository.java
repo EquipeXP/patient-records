@@ -36,8 +36,7 @@ public class PatientRepository implements IPatientRepository {
 		session.save(patient);
 		
 		session.getTransaction().commit();
-		session.close();
-		
+
 		return patient;
 	}
 

@@ -15,6 +15,32 @@
             ethnicGroup: undefined
         };
 
+        function load() {
+            PatientService.getById($routeParams.idPatient)
+                .then(function(patient) {
+
+                    $scope.patient = angular.copy(patient.data);
+                    $scope.patient.birthDate = new Date(patient.data.birthDate);
+                }, function(err) {
+
+                    AlertService.addError('Paciente não encontrado.');
+                });
+        }
+
+        load();
+
+        $scope.save = function() {
+
+            PatientService.addConsultation($routeParams.idPatient, $scope.consultation)
+                .then(function(res) {
+
+                    console.log(res);
+                }, function(err) {
+
+                    console.log(err);
+                });
+        };
+
         $scope.gendersAdm = {
             'F': 'Feminino',
             'M': 'Masculino',
@@ -124,19 +150,7 @@
             ]
         };
 
-        function load() {
-            PatientService.getById($routeParams.idPatient)
-                .then(function(patient) {
 
-                    $scope.patient = angular.copy(patient.data);
-                    $scope.patient.birthDate = new Date(patient.data.birthDate);
-                }, function(err) {
-
-                    AlertService.addError('Paciente não encontrado.');
-                });
-        }
-
-        load();
     }
 
     angular.module('app.controllers').controller('ConsultationNewCtrl', consultationNewCtrl)
