@@ -42,8 +42,14 @@ public class M2F9US1DefinitionSteps {
     	evaluationSteps.saveForm();
     }
 	
-	@Then("An $alert should appear")
-	public void thenAnAlertShouldAppear(String alert){
+	@Then("An <alert> should appear")
+	public void thenAnAlertShouldAppear(@Named("alert") String alert){
+		evaluationSteps.shoudlSeeMessage(alert);
+	}
+	
+	@Then("an <alert> should appear warning that some fields have no data")
+	public void thenAnAlertShouldAppearWarningThatSomeFieldsHaveNoData(
+			@Named("alert") String alert) {
 		evaluationSteps.shoudlSeeMessage(alert);
 	}
 	
