@@ -19,12 +19,8 @@ public class PatientRepository implements IPatientRepository {
 		
 		Session session = _session.get();
 		session.beginTransaction();
-		
-		List<Patient> patients = session.createCriteria(Patient.class).list();
-		
-		session.close();
-		
-		return patients;
+
+		return session.createCriteria(Patient.class).list();
 	}
 
 	@Override
@@ -46,11 +42,7 @@ public class PatientRepository implements IPatientRepository {
 		Session session = _session.get();
 		session.beginTransaction();
 
-		Patient patient = session.get(Patient.class, patientId);
-
-		session.close();
-
-		return patient;
+		return session.get(Patient.class, patientId);
 	}
 
 }

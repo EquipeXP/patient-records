@@ -2,9 +2,29 @@
 
     'use strict';
 
-    function consultationNewCtrl($scope, $routeParams, PatientService, AlertService) {
+    function consultationNewCtrl($scope, $routeParams, PatientService, AlertService, $location) {
 
-        $scope.consultation = {};
+        $scope.consultation = {
+            mainComplaint: "",
+            subjectiveComments: "",
+            height: "",
+            weight: "",
+            temperature: "",
+            diastolicPressure: "",
+            systolicPressure: "",
+            heartRate: "",
+            glycemicLevel: "",
+            respiratoryRate: "",
+            oxigenLevel: "",
+            carbonDioxideLevel: "",
+            objectiveComments: "",
+            analysisDiagnostic: "",
+            analysisType: "",
+            analysisComments: "",
+            conduct: "",
+            planComments: "",
+            evolution: ""
+        };
 
         $scope.patient = {
             name: undefined,
@@ -34,7 +54,8 @@
             PatientService.addConsultation($routeParams.idPatient, $scope.consultation)
                 .then(function(res) {
 
-                    console.log(res);
+                    AlertService.addSuccess('Consulta salva com sucesso.');
+                    $location.path('/');
                 }, function(err) {
 
                     console.log(err);
