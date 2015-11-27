@@ -171,7 +171,7 @@ public class SOAPEPage extends PageObject {
 	/* ---------------------------------------------------------------------- */
 	public void typeDisease(String disease) {
 		WebElement select = find(By.id("analysis_diagnostic"));
-		List<WebElement> options = select.findElements(By.tagName("options"));
+		List<WebElement> options = select.findElements(By.tagName("option"));
 		for (WebElement option : options) {
 			if (option.getText().equals(disease)) {
 				option.click();
@@ -187,7 +187,7 @@ public class SOAPEPage extends PageObject {
 
 	public void chooseType(String type) {
 		WebElement select = find(By.id("analysis_type"));
-		List<WebElement> options = select.findElements(By.tagName("options"));
+		List<WebElement> options = select.findElements(By.tagName("option"));
 		for (WebElement option : options) {
 			if (option.getText().equals(type)) {
 				option.click();
@@ -256,25 +256,24 @@ public class SOAPEPage extends PageObject {
 	}
 
 	public void fillEvaluationWith(String diagnostic, String type) {
-		WebElement complaintTab = find(By.id("analysis_tab"));
-		complaintTab.click();
 
-		// WebElement heightField = find(By.id("objective_height"));
-		// heightField.sendKeys(height);
+        find(By.id("analysis_tab")).findElement(By.tagName("a")).click();
+
+        typeDisease(diagnostic);
+        chooseType(type);
 
 	}
 
 	public void fillPlanWith(String conduct) {
-		WebElement complaintTab = find(By.id("plan_tab"));
-		complaintTab.click();
+        find(By.id("plan_tab")).findElement(By.tagName("a")).click();
 
 		WebElement conductField = find(By.id("plan_conduct"));
 		conductField.sendKeys(conduct);
 	}
 
 	public void fillEvolutionWith(String evolution) {
-		WebElement complaintTab = find(By.id("evolution_tab"));
-		complaintTab.click();
+
+        find(By.id("evolution_tab")).findElement(By.tagName("a")).click();
 
 		WebElement evolutionField = find(By.id("evolution"));
 		evolutionField.sendKeys(evolution);

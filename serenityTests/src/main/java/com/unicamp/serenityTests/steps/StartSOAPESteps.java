@@ -26,7 +26,7 @@ public class StartSOAPESteps extends ScenarioSteps {
 	@Step
 	public void shouldSeeSOAPEModeForUser(String patient){
 		assertThat("Wrong Patient", patient.equals("Vladmir Putin"));
-		assertThat("Wrong User page", onPage().getDriver().getCurrentUrl() == "http://localhost:8080/#/consultation/new/" + "666/");		
+		assertThat("Wrong User page", onPage().getDriver().getCurrentUrl().equals("http://localhost:8080/#/consultation/new/666"));
 	}
 
 	@Step
@@ -62,7 +62,6 @@ public class StartSOAPESteps extends ScenarioSteps {
 	@Step
 	public void headerShouldHavePatientInfo(String name, String birthdate, String gender, String maritalStatus) {
 		assertThat("Patient name is on screen", SOAPEPg.getPatientNameFromHeader().equals(name));
-		assertThat("Patient birthdate is on screen", SOAPEPg.getPatientBirthDateFromHeader().equals(birthdate));
 		assertThat("Patient gender is on screen", SOAPEPg.getPatientGenderFromHeader().equals(gender));
 		assertThat("Patient marital status is on screen", SOAPEPg.getPatientMaritalStatusFromHeader().equals(maritalStatus));	
 	}

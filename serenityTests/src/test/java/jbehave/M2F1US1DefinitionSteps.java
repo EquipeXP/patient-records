@@ -22,7 +22,11 @@ public class M2F1US1DefinitionSteps {
 
 	@When("'$user' sees header")
 	public void whenUserSeesHeader(){
-		
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Then("'$user' should see <name>, <birthdate>, <gender>, <maritalStatus>")
