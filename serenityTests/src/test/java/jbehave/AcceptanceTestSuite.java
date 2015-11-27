@@ -1,4 +1,4 @@
-package com.unicamp.serenityTests.jbehave;
+package jbehave;
 
 import net.serenitybdd.jbehave.SerenityStories;
 

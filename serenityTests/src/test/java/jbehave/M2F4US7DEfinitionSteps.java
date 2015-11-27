@@ -1,4 +1,4 @@
-package com.unicamp.serenityTests.jbehave;
+package jbehave;
 
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Named;
