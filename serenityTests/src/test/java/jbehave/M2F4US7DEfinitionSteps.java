@@ -52,7 +52,7 @@ public class M2F4US7DEfinitionSteps {
 				respiratoryFrequency, oxygenSaturation, carbonDioxSaturation);
 	}
 
-	@When("'$user' fill evaluation with <diagnostic> and <type>")
+	@When("'$user' set evaluation with <diagnostic> and <type>")
 	void whenUserFillEvaluationWith(String diagnostic, String type) {
 		startSOAPESteps.fillEvaluationWith(diagnostic, type);
 	}
@@ -69,7 +69,7 @@ public class M2F4US7DEfinitionSteps {
 
 	@Then("'$user' should see <message>")
 	public void thenUserShouldSeeMessage(String message) {
-		assert (true);
+		startSOAPESteps.successMessage(message);
 	}
 
 }

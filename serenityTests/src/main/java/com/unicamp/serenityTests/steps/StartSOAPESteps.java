@@ -71,6 +71,7 @@ public class StartSOAPESteps extends ScenarioSteps {
 		SOAPEPg.fillComplaint(complaint);
 	}
 
+    @Step
 	public void fillObjectiveWith(String height, String weight, String temperature, String bloodPressure,
 			String cardiacFrequency, String cgb, String respiratoryFrequency, String oxygenSaturation,
 			String carbonDioxSaturation) {
@@ -78,19 +79,27 @@ public class StartSOAPESteps extends ScenarioSteps {
 		
 	}
 
+    @Step
 	public void fillEvaluationWith(String diagnostic, String type) {
 		SOAPEPg.fillEvaluationWith(diagnostic, type);
 		
 	}
 
+    @Step
 	public void fillPlanWith(String conduct) {
 		SOAPEPg.fillPlanWith(conduct);
 		
 	}
 
+    @Step
 	public void fillEvolutionWith(String evolution) {
 		SOAPEPg.fillEvolutionWith(evolution);
 		
 	}
+
+    @Step
+    public void successMessage(String message) {
+        assertThat("Consultation added message", SOAPEPg.getMessage().equals(message));
+    }
 
 }
