@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
@@ -17,19 +18,6 @@ import org.openqa.selenium.WebElement;
 
 @DefaultUrl("http://localhost:8080/#/")
 public class SOAPEPage extends PageObject {
-
-	private WebElement subjectiveTab = find(By.id("subjective_tab"));
-	private WebElement objectiveTab = find(By.id("objective_tab"));
-	private WebElement analysisTab = find(By.id("analysis_tab"));
-	private WebElement planTab = find(By.id("plan_tab"));
-	private WebElement evolutionTab = find(By.id("evolution_tab"));
-
-	public List<String> getSOAPELink(String patient) {
-		WebElementFacade lnk = find(By.partialLinkText(patient));
-		// return lnk.toString();
-		return new ArrayList<String>();
-		// TOFIX
-	}
 
 	public void enterConsultationPage(String patientId) {
 
@@ -56,23 +44,23 @@ public class SOAPEPage extends PageObject {
 
 		switch (tab) {
 		case "SUBJETIVO":
-			subjectiveTab.findElement(By.tagName("a")).click();
+            find(By.id("subjective_tab")).findElement(By.tagName("a")).click();
 			break;
 
 		case "OBJETIVO":
-			objectiveTab.findElement(By.tagName("a")).click();
+            find(By.id("objective_tab")).findElement(By.tagName("a")).click();
 			break;
 
 		case "ANALISE":
-			analysisTab.findElement(By.tagName("a")).click();
+            find(By.id("analysis_tab")).findElement(By.tagName("a")).click();
 			break;
 
 		case "PLANO":
-			planTab.findElement(By.tagName("a")).click();
+            find(By.id("plan_tab")).findElement(By.tagName("a")).click();
 			break;
 
 		case "EVOLUCAO":
-			evolutionTab.findElement(By.tagName("a")).click();
+            find(By.id("evolution_tab")).findElement(By.tagName("a")).click();
 			break;
 		}
 	}
