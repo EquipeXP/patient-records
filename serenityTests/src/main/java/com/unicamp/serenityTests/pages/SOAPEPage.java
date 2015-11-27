@@ -220,8 +220,8 @@ public class SOAPEPage extends PageObject {
 	public void fillObjectiveWith(String height, String weight, String temperature, String bloodPressure,
 			String cardiacFrequency, String cgb, String respiratoryFrequency, String oxygenSaturation,
 			String carbonDioxSaturation) {
-		WebElement complaintTab = find(By.id("objective_tab"));
-		complaintTab.click();
+
+        find(By.id("objective_tab")).findElement(By.tagName("a")).click();
 
 		WebElement heightField = find(By.id("objective_height"));
 		heightField.sendKeys(height);
